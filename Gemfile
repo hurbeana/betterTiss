@@ -27,8 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
-gem 'pry-rails', :group => :development
-
 gem 'bootstrap-sass'
 
 # Use ActiveStorage variant
