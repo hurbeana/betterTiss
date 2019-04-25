@@ -1,0 +1,12 @@
+<% provide :title, "Search " + yield(:subject) %>
+<% get_path = nil if get_path.nil? %>
+<h1><%= 'Search TISS ' + yield(:subject) %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag(get_path, method: :get) do %>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag 'Search ' + yield(:subject), name: nil %>
+    <% end %>
+  </div>
+</div>
