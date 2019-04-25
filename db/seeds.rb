@@ -9,15 +9,18 @@
 User.create!(name: 'Alexander Hurbean',
              email: 'hurbeana@gmail.com',
              password: 'foobar',
-             password_confirmation: 'foobar')
+             password_confirmation: 'foobar',
+             admin: true)
 User.create!(name: 'Bernhard Ploder',
              email: 'bernhard1996@gmail.com',
              password: 'foobar',
-             password_confirmation: 'foobar')
+             password_confirmation: 'foobar',
+             admin: true)
 User.create!(name: 'Silvana Grausgruber',
              email: '1996silvana1996@gmx.at',
              password: 'foobar',
-             password_confirmation: 'foobar')
+             password_confirmation: 'foobar',
+             admin: true)
 
 99.times do |n|
   name  = Faker::Name.name
