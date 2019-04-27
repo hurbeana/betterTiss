@@ -1,9 +1,0 @@
-<% provide :subject, "People" %>
-<div class="row">
-  <%= render 'search', get_path: search_people_path %>
-  <div class="col-md-6 col-md-offset-3 row">
-    <% if @response %>
-      <%= render partial: 'shared/person', collection: @response %>
-    <% end %>
-  </div>
-</div>

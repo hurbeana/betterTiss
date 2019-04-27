@@ -8,4 +8,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def tiss_link
+    'https://tiss.tuwien.ac.at'
+  end
 end

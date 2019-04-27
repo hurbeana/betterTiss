@@ -1,4 +1,8 @@
 class PeopleController < ApplicationController
+  def search
+    @people = Person.search(params[:query]) if params[:query]
+  end
+
   def favorite
     type = params[:type]
     if type == 'favorite'
