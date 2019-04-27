@@ -1,8 +1,8 @@
 <header class="sticky">
-  <%= link_to "sample app", root_path, id: "logo", class: "logo" %>
-  <div class="floatRight">
-    <%= content_tag :a, "Home", href: root_path, class: %w(hidden-sm button) %>
-    <%= content_tag :a, "Help", href: help_path, class: %w(hidden-sm button) %>
-    <%= content_tag :a, "Login", href: "", class: %w(hidden-sm button) %>
-  </div>
+  <ul class="sidenav">
+    <li><%= content_tag :a, "BetterTiss", href: root_path, id: "logo" %></li>
+    <!--li><%= content_tag :a, "Home", href: root_path, class: "button" %></li-->
+    <li><%= content_tag :a, "Sign Up", href: "", class: "button" %></li>
+    <li><%= content_tag :a, "Login", href: "", class: "button" %></li>
+  </ul>
 </header>
