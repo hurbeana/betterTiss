@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get    '/search/people', to: 'search#people'
   get    '/search/courses', to: 'search#courses'
   resources :users
+  resources :persons do
+    put :favorite, on: :member
+  end
 end

@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
 require 'httparty'
+# A controller for searches on TISS
 class SearchController < ApplicationController
   def people
-    url = 'https://tiss.tuwien.ac.at/api/person/v21/psuche?q='
-    execute_search(url)
+    @response = execute_search(Person.tiss_search_link)
+    @response&.map! do |p|
+      Person.new p
+    end
   end
 
   def courses
-    url = 'https://tiss.tuwien.ac.at/api/search/course/v1.0/quickSearch?searchterm='
-    execute_search(url)
+    execute_search(tiss_course_search_link)
   end
 
   private
 
   def execute_search(url)
-    @response = HTTParty.get(url + CGI.escape(params[:query])) unless params[:query].nil?
+    return if params[:query].nil?
+
+    HTTParty.get(url + CGI.escape(params[:query])).parsed_response['results']
   end
 end

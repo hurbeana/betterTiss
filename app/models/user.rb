@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   attr_accessor :remember_token
 
+  has_and_belongs_to_many :persons
+
   # Remembers a user in the database for use in persistent sessions
   def remember
     self.remember_token = User.new_token

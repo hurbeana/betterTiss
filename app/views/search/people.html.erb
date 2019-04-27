@@ -1,17 +1,9 @@
 <% provide :subject, "People" %>
-<%= render 'search', get_path: search_people_path %>
-<div class="col-md-6 col-md-offset-3">
-  <% if @response %>
-    <% @response.parsed_response["results"].each do |r| %>
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title"><%= r["firstname"] + " " + r["lastname"] %></h3>
-          <p>Gender: <%= r["gender"] %></p>
-          <p>Prefix Titel: <%= r["prefixTitle"] %></p>
-          <p>Postfix Titel: <%= r["postfixTitle"] %></p>
-          <%= raw r["short"]&.html_safe %>
-        </div>
-      </div>
+<div class="row">
+  <%= render 'search', get_path: search_people_path %>
+  <div class="col-md-6 col-md-offset-3 row">
+    <% if @response %>
+      <%= render partial: 'shared/person', collection: @response %>
     <% end %>
-  <% end %>
+  </div>
 </div>
