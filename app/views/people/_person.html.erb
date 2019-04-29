@@ -1,0 +1,18 @@
+<div class="card bg-light mb-3" style="width: 18rem; border: 1px solid rgba(0,0,0,.125); margin: 6px;">
+  <% if person.image %>
+  <%= image_tag tiss_link + person.image, size: 50, class: 'card-img-top'%>
+  <% end %>
+  <div class="card-header"><%= person.first_name + " " + person.last_name %></div>
+  <div class="card-body">
+    <p class="card-text">Gender: <%= person.gender %></p>
+    <p class="card-text">Prefix Titel: <%= person.prefix_title %></p>
+    <p class="card-text">Postfix Titel: <%= person.postfix_title %></p>
+    <p class="card-text">Link: <a href="<%= tiss_link + person.link %>">Tiss</a></p>
+    <% if false %>
+      <% if current_user %>
+        <%= link_to "favorite",   favorite_person_path(@recipe, type: "favorite"), method: :put %>
+        <%= link_to "unfavorite", favorite_person_path(@recipe, type: "unfavorite"), method: :put %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

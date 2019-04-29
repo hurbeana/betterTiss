@@ -34,6 +34,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'faker', '1.7.3'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'httparty'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
