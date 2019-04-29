@@ -8,14 +8,21 @@
     margin-right: 25px;
 }
 
-#logo:hover {
-    color: lightgrey;
+a#logo:hover {
+
 }
 
 header {
     position: fixed;
     width: 100%;
     top: 0;
+}
+
+.stickyHeader {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    width: 100%;
 }
 
 h1 {
@@ -27,7 +34,6 @@ h2 {
 }
 
 .main {
-    padding-top: 75px;
     text-align: center;
 }
 
@@ -52,7 +58,8 @@ a.myButton {
     color: black;
     font-weight: bold;
     text-decoration: none;
-    margin: 1em 0 1em 0;
+    min-width: 125px;
+    margin: 1em 25% 1em 25%;
     padding: 0.5em 0 0.5em 0;
     border-radius: 0.5em;
     box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.33);
@@ -110,11 +117,11 @@ li.dropdown {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
+    text-align: center;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: lightgrey;
 }
 
 .dropdown:hover .dropdown-content {
