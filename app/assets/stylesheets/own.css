@@ -18,13 +18,6 @@ header {
     top: 0;
 }
 
-.stickyHeader {
-    margin: 0;
-    padding: 0;
-    height: 80px;
-    width: 100%;
-}
-
 h1 {
     font-size: 3em;
 }
@@ -33,18 +26,31 @@ h2 {
     font-size: 1.5em;
 }
 
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .main {
+    margin-top: 10%;
+    margin-bottom: 10%;
     text-align: center;
+    flex: 1 0 auto;
 }
 
 footer {
-    position: fixed; /* absolute is dann iwo in der Mitte? */
-    bottom: 0;
+    flex-shrink: 0;
 }
 
 footer div p {
     background-color: red;
     text-align: center; /* dunno how to */
+}
+
+footer div p:hover {
+    background-color: blue;
+    font-size: 2em;
 }
 
 #searches {
@@ -68,6 +74,7 @@ a.myButton {
 a.myButton:hover {
     background-color: darkslategray;
     color: white;
+    margin: 0 23% 0 23%;
 }
 
 
