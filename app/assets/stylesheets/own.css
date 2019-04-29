@@ -12,9 +12,10 @@
     color: lightgrey;
 }
 
-header ul li a .someother {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 h1 {
@@ -26,11 +27,12 @@ h2 {
 }
 
 .main {
+    padding-top: 75px;
     text-align: center;
 }
 
 footer {
-    position: absolute;
+    position: fixed; /* absolute is dann iwo in der Mitte? */
     bottom: 0;
 }
 
@@ -68,7 +70,8 @@ a.myButton:hover {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
     overflow: hidden;
     background-color: darkslategray;
 }
