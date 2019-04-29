@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get    '/people/search'
+  put    '/people/favorite', to: 'people#favorite'
   resources :users
-  resources :people do
-    put :favorite, on: :member
-  end
 end

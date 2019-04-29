@@ -8,9 +8,6 @@
     <p class="card-text">Prefix Titel: <%= person.prefix_title %></p>
     <p class="card-text">Postfix Titel: <%= person.postfix_title %></p>
     <p class="card-text">Link: <a href="<%= tiss_link + person.p_link %>">Tiss</a></p>
-    <% if current_user %>
-      <%= link_to "favorite",   favorite_person_path(person, type: "favorite"), method: :put %>
-      <%= link_to "unfavorite", favorite_person_path(person, type: "unfavorite"), method: :put %>
-    <% end %>
+    <%= render 'shared/favorite', tiss_id: person.tiss_id%>
   </div>
 </div>
