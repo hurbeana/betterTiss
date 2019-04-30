@@ -9,7 +9,7 @@ module Searchable
       result = Array.new
       response.each do |p|
         obj = new(tiss_id: p['id'])
-        obj.fill p
+        obj.fillarray p
         result << obj
       end
       result

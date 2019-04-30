@@ -2,10 +2,10 @@ class PeopleController < ApplicationController
   include Favoritable
 
   def show
-    resp = HTTParty.get("https://tiss.tuwien.ac.at/api/person/v21/id/" + params[:id]).parsed_response
-    doc = Nokogiri::XML(resp).remove_namespaces!
-    doc.at_xpath('//person')
-    debugger
+    resp = HTTParty.get('https://tiss.tuwien.ac.at/api/person/v21/id/' + params[:id])
+                   .parsed_response['tuvienna']['person']
+    @person = Person.new
+    @person.fillhash resp
   end
 
   def search

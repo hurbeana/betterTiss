@@ -1,9 +1,7 @@
 <% if current_user %>
-  <% unless favorite?(tiss_id) %>
-    <%= link_to "favorite", {controller: controller_name, action: 'favorite',
-                             tiss_id: tiss_id, type: 'favorite'}, method: :put %>
+  <% if favorite?(person) %>
+    <%= link_to "unfavorite", people_favorite_path(tiss_id: person.tiss_id, type: 'unfavorite'), method: :put %>
   <% else %>
-    <%= link_to "unfavorite", {controller: controller_name, action: 'favorite',
-                               tiss_id: tiss_id, type: 'unfavorite'}, method: :put %>
+    <%= link_to "favorite", people_favorite_path(tiss_id: person.tiss_id, type: 'favorite'), method: :put %>
   <% end %>
 <% end %>

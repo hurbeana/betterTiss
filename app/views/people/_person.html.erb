@@ -1,13 +1,14 @@
-<div class="card bg-light mb-3" style="width: 18rem; border: 1px solid rgba(0,0,0,.125); margin: 6px;">
+<div class="card bg-light mb-3 col-sm-4" style="width: 18rem; border: 1px solid rgba(0,0,0,.125); margin: 6px;">
   <% if person.p_image %>
-  <%= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top'%>
+    <%= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top' %>
   <% end %>
-  <div class="card-header"><%= person.tiss_id.to_s + " " + person.first_name + " " + person.last_name %></div>
+  <div class="card-header"><%= link_to "#{person.tiss_id.to_s} #{person.firstname} #{person.lastname}",
+                                       people_path(id: person.tiss_id) %></div>
   <div class="card-body">
     <p class="card-text">Gender: <%= person.gender %></p>
-    <p class="card-text">Prefix Titel: <%= person.prefix_title %></p>
-    <p class="card-text">Postfix Titel: <%= person.postfix_title %></p>
-    <p class="card-text">Link: <a href="<%= tiss_link + person.p_link %>">Tiss</a></p>
-    <%= render 'shared/favorite', tiss_id: person.tiss_id%>
+    <p class="card-text">Prefix Titel: <%= person.prefixTitle %></p>
+    <p class="card-text">Postfix Titel: <%= person.postfixTitle %></p>
+    <p class="card-text">Link: <a href="<%= tiss_link + person.p_link unless person&.p_link.nil? %>">Tiss</a></p>
+    <%= render 'shared/favorite', person: person %>
   </div>
 </div>
