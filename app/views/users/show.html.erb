@@ -8,4 +8,10 @@
       </h1>
     </section>
   </aside>
+  <main class="col-md-8">
+    <h1>People favorite</h1>
+    <div class="row">
+      <%= render partial: 'people/person', collection: @user.people, as: :person %>
+    </div>
+  </main>
 </div>

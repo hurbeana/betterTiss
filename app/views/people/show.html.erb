@@ -1,0 +1,19 @@
+<% provide(:title, @person.firstname + " " + @person.lastname) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <% if @person.p_image %>
+          <%= image_tag tiss_link + @person.p_image, size: 50 %>
+        <% end %>
+        <div class="card-header"><%= @person.tiss_id.to_s + " " + @person.firstname + " " + @person.lastname %></div>
+        <div class="card-body">
+          <p class="card-text">Gender: <%= @person.gender %></p>
+          <p class="card-text">Prefix Titel: <%= @person.prefixTitle %></p>
+          <p class="card-text">Postfix Titel: <%= @person.postfixTitle %></p>
+          <%= render 'shared/favorite', person: @person %>
+        </div>
+      </h1>
+    </section>
+  </aside>
+</div>
