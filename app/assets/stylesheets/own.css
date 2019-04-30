@@ -36,9 +36,12 @@ html, body, header, footer {
     min-width: 256px;
 }
 
+body {
+    padding-top: var(--test);
+    margin: 0;
+}
+
 .main {
-    margin-top: 10%;
-    margin-bottom: 10%;
     text-align: center;
     flex: 1 0 auto;
 }
@@ -154,6 +157,10 @@ li.sml {
 
 li.med {
     display: none;
+}
+
+:root {
+    --test: 52px;
 }
 
 @media screen and (max-width: 842px) {
