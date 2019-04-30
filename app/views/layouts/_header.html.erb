@@ -5,6 +5,21 @@
       <%= link_to "BetterTiss", root_path, id: "logo" %>
     </li>
 
+    <li class="dropdown med">
+      <%= content_tag :a, "Searches", class: "dropbtn button" %>
+      <div class="dropdown-content" style="text-align: center">
+        <%= link_to "Person search", people_search_path, class: "button" %>
+        <%= link_to "Course search", "", class: "button" %>
+        <%= link_to "Project search", "", class: "button" %>
+        <%= link_to "Theses search", "", class: "button" %>
+      </div>
+    </li>
+
+    <li class="big"><%= link_to "Person search", people_search_path, class: "button" %></li>
+    <li class="big"><%= link_to "Course search", "", class: "button" %></li>
+    <li class="big"><%= link_to "Project search", "", class: "button" %></li>
+    <li class="big"><%= link_to "Theses search", "", class: "button" %></li>
+
     <% if logged_in? %>
       <li class="dropdown" style="float: right;">
         <%= content_tag :a, "PROFILE NAME", class: "dropbtn button" %>

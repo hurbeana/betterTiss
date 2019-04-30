@@ -9,7 +9,7 @@
 }
 
 a#logo:hover {
-
+    background-color: darkslategray;
 }
 
 header {
@@ -30,6 +30,10 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+html, body, header, footer {
+    min-width: 256px;
 }
 
 .main {
@@ -74,8 +78,9 @@ a.myButton {
 a.myButton:hover {
     background-color: darkslategray;
     color: white;
-    margin: 0 23% 0 23%;
+    margin: 1em 23% 1em 23%;
 }
+
 
 
 
@@ -94,7 +99,7 @@ li {
     float: left;
 }
 
-li a, dropbtn {
+li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -133,4 +138,42 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+
+
+
+
+
+
+/* ##### MEDIA BREAKPOINTS ##### */
+
+li.sml {
+    display: none;
+}
+
+li.med {
+    display: none;
+}
+
+@media screen and (max-width: 842px) {
+
+    li.big {
+        display: none;
+    }
+
+    li.med {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 443px) {
+
+    li.big {
+        display: none;
+    }
+
+    li.sml {
+        display: block;
+    }
 }
