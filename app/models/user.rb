@@ -10,6 +10,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   has_and_belongs_to_many :people
+  has_and_belongs_to_many :courses
 
   # Remembers a user in the database for use in persistent sessions
   def remember
