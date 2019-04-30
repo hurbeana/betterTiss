@@ -1,0 +1,179 @@
+
+#logo {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px;
+    margin-right: 25px;
+}
+
+a#logo:hover {
+    background-color: darkslategray;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+html, body, header, footer {
+    min-width: 256px;
+}
+
+.main {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+footer div p {
+    background-color: red;
+    text-align: center; /* dunno how to */
+}
+
+footer div p:hover {
+    background-color: blue;
+    font-size: 2em;
+}
+
+#searches {
+    margin-top: 5em;
+}
+
+/* ##### main part ##### */
+a.myButton {
+    display: block;
+    background-color: #BBBBBB;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    min-width: 125px;
+    margin: 1em 25% 1em 25%;
+    padding: 0.5em 0 0.5em 0;
+    border-radius: 0.5em;
+    box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.33);
+}
+
+a.myButton:hover {
+    background-color: darkslategray;
+    color: white;
+    margin: 1em 23% 1em 23%;
+}
+
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    background-color: darkslategray;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16.5px;   /* well ok */
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: cornflowerblue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: lightgrey;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+/* ##### MEDIA BREAKPOINTS ##### */
+
+li.sml {
+    display: none;
+}
+
+li.med {
+    display: none;
+}
+
+@media screen and (max-width: 842px) {
+
+    li.big {
+        display: none;
+    }
+
+    li.med {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 443px) {
+
+    li.big {
+        display: none;
+    }
+
+    li.sml {
+        display: block;
+    }
+}

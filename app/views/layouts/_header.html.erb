@@ -1,31 +1,45 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "People Search", people_search_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
+<header>
+
+  <ul class="sidenav">
+    <li>
+      <%= link_to "BetterTiss", root_path, id: "logo" %>
+    </li>
+
+    <li class="dropdown med">
+      <%= content_tag :a, "Searches", class: "dropbtn button" %>
+      <div class="dropdown-content" style="text-align: center">
+        <%= link_to "Person search", people_search_path, class: "button" %>
+        <%= link_to "Course search", "", class: "button" %>
+        <%= link_to "Project search", "", class: "button" %>
+        <%= link_to "Theses search", "", class: "button" %>
+      </div>
+    </li>
+
+    <li class="big"><%= link_to "Person search", people_search_path, class: "button" %></li>
+    <li class="big"><%= link_to "Course search", "", class: "button" %></li>
+    <li class="big"><%= link_to "Project search", "", class: "button" %></li>
+    <li class="big"><%= link_to "Theses search", "", class: "button" %></li>
+
+    <% if logged_in? %>
+      <li class="dropdown" style="float: right;">
+        <%= content_tag :a, "PROFILE NAME", class: "dropbtn button" %>
+        <div class="dropdown-content" style="right: 0">
+          <%= link_to "Profile", current_user, class: "button" %>
+          <%= link_to "Settings", edit_user_path(current_user), class: "button" %>
+          <%= link_to "Log out", logout_path, method: :delete, class: "button" %>
+        </div>
+      </li>
+
+    <% else %>
+      <li style="float: right">
+        <%= link_to "Login", login_path, class: "button" %>
+      </li>
+      <li style="float: right">
+        <%= link_to "Sign up", signup_path, class: "button" %>
+      </li>
+
+    <% end %>
+
+  </ul>
+
 </header>
