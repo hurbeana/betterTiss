@@ -1,7 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  tiss_id: MyString
-
-two:
-  tiss_id: MyString
+ror:
+  tiss_id: 188519-2019S
