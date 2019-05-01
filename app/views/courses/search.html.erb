@@ -1,0 +1,9 @@
+<% provide :subject, "Course" %>
+<div class="row">
+  <%= render 'shared/search' %>
+  <div>
+    <% if @courses %>
+      <%= render @courses %>
+    <% end %>
+  </div>
+</div>

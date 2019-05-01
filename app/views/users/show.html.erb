@@ -13,5 +13,9 @@
     <div class="row">
       <%= render partial: 'people/person', collection: @user.people, as: :person %>
     </div>
+    <h1>Course favorites</h1>
+    <div class="row">
+      <%= render partial: 'courses/course', collection: @user.courses, as: :course %>
+    </div>
   </main>
 </div>
