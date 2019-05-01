@@ -1,0 +1,49 @@
+23.03.2019 - 2h
+Ruby on Rails tutorials angesehen. Ruby und Rails installiert.
+Probleme mit sqlite3 gehabt - nach Lösung gesucht.
+
+22.04.2019 - 1h
+Weitere Tutorials on how to getting started angesehen.
+
+24.04.2019 - 5h
+Allgemeine Operationen von Rails ausprobiert. 
+Controller generiert, HTML bearbeitet, Routen gesetzt, ...
+Angefangen an eigener CSS zu arbeiten und versucht, diese mit vorläufig vorhandenen 
+CSS Files zu kombinieren. (funktioniert nicht besonders gut)
+
+26.04.2019 - 2h
+Internetrecherche zu Ruby HTML. + testing
+
+27.04.2019 - 4h
+An der Haupt-CSS gearbeitet. (Verschiedene Möglichkeiten für den Header ausprobiert.)
+media breakpoints eingeführt.
+Home-HTML cleanup
+
+28.04.2019 - 3h
+arbeiten an verschiedenen html files.
+verschiedene Varianten von Drop down Menüpunkten für die Navigation bar ausprobiert.
+
+29.04.2019 - 1.5h
+fixed header layout.
+Buttons zu Suchseiten auf der Home Seite bearbeitet.
+merged object testing branch into this one and made minor changes to the html files.
+29.04.2019 - 3h
+Recherche zu zusätzlichen Rails Gems bezüglich Record-Resource relations. (ActiveResources)
+Main HTML content now uses display:flex.
+Problem mit Footer behoben.
+
+30.04.2019 - 6.5h
+HTML body richtig gepadded.
+changed content of navigation bar.
+-- Merged object testing branch and css branch.
+modified media breakpoints - now 2 breakpoints for 3 screen sizes
+added javascript file for later use
+working on navigation menu for mobile view
+added onclick functions to the javascript file.
+worked on responsive ui changes.
+
+01.05.2019 - 3h
+added collapsible containers in profile page for favorites.
+worked on search page - search result list.
+restructured content of result list elements (cards) and detail view of element.
+
