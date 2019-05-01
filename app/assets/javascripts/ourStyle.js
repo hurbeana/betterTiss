@@ -28,3 +28,12 @@ function openButtonMobileMenu(element) {
 
     body.style.paddingTop = header.style.height;
 }
+
+function openCollapsible(element) {
+    let content = element.nextElementSibling;
+    if (content.style.maxHeight){
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
