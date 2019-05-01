@@ -1,13 +1,12 @@
 <div>
   <h1>Welcome to BetterTiss</h1>
 
-  <%= link_to "Sign up now!", signup_path, class: "" %>
+  <div id="signLogCont">
+  <h2>Please create an account here if you are new</h2>
+  <%= link_to "Sign up now!", signup_path, class: "myButton" %>
 
-  <div id="searches">
-    <%= link_to "Person search", people_search_path, class: "myButton" %>
-    <%= link_to "Course search", "", class: "myButton" %>
-    <%= link_to "Project search", "", class: "myButton" %>
-    <%= link_to "Theses search", "", class: "myButton" %>
+  <h2>or</h2>
+  <%= link_to "Log in", login_path, class: "myButton" %>
   </div>
 
 </div>

@@ -2,17 +2,23 @@
 <%= form_for(@user, url: post_path) do |f| %>
   <%= render 'shared/error_messages' %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <div class="flexRow">
+    <div class="flexCol">
+      <%= f.label :name, class: 'flexCont' %>
+      <%= f.label :email, class: 'flexCont' %>
+      <%= f.label :password, class: 'flexCont' %>
+      <%= f.label :password_confirmation, "Confirmation", class: 'flexCont' %>
+    </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+    <div class="flexCol">
+      <%= f.text_field :name, class: 'form-control, flexCont' %>
+      <%= f.email_field :email, class: 'form-control, flexCont' %>
+      <%= f.password_field :password, class: 'form-control, flexCont' %>
+      <%= f.password_field :password_confirmation, class: 'form-control, flexCont' %>
+    </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

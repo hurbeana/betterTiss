@@ -72,7 +72,7 @@ a.myButton {
     font-weight: bold;
     text-decoration: none;
     min-width: 125px;
-    margin: 1em 25% 1em 25%;
+    margin: 1em 35% 1em 35%;
     padding: 0.5em 0 0.5em 0;
     border-radius: 0.5em;
     box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.33);
@@ -81,7 +81,7 @@ a.myButton {
 a.myButton:hover {
     background-color: darkslategray;
     color: white;
-    margin: 1em 23% 1em 23%;
+    margin: 1em 33% 1em 33%;
 }
 
 
@@ -145,6 +145,35 @@ li.dropdown {
 
 
 
+
+
+/* user edit page */
+
+.gravatar_edit {
+    padding-bottom: 35px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.flexCont {
+    margin: 2px 10px 2px 0;
+}
+
+#signLogCont {
+    padding-top: 35px;
+}
 
 
 
