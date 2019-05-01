@@ -1,9 +1,13 @@
 <% provide :title, "Search " + yield(:subject) %>
 
-<div>
-  <h1><%= 'Search TISS ' + yield(:subject) %></h1>
+<div id="searchHeader">
+  <h1>
+    <%= 'Search TISS ' + yield(:subject) %>
+  </h1>
+
   <%= form_tag(nil, method: :get) do %>
     <%= text_field_tag :query, params[:query] %>
     <%= submit_tag 'Search ' + yield(:subject), name: nil %>
   <% end %>
+
 </div>

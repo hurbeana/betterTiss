@@ -36,9 +36,12 @@ html, body, header, footer {
     min-width: 256px;
 }
 
+body {
+    padding-top: var(--test);
+    margin: 0;
+}
+
 .main {
-    margin-top: 10%;
-    margin-bottom: 10%;
     text-align: center;
     flex: 1 0 auto;
 }
@@ -69,7 +72,7 @@ a.myButton {
     font-weight: bold;
     text-decoration: none;
     min-width: 125px;
-    margin: 1em 25% 1em 25%;
+    margin: 1em 35% 1em 35%;
     padding: 0.5em 0 0.5em 0;
     border-radius: 0.5em;
     box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.33);
@@ -78,7 +81,7 @@ a.myButton {
 a.myButton:hover {
     background-color: darkslategray;
     color: white;
-    margin: 1em 23% 1em 23%;
+    margin: 1em 33% 1em 33%;
 }
 
 
@@ -144,36 +147,187 @@ li.dropdown {
 
 
 
+/* user edit page */
+
+.gravatar_edit {
+    padding-bottom: 35px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.flexCont {
+    margin: 2px 10px 2px 0;
+}
+
+#signLogCont {
+    padding-top: 35px;
+}
+
+
+/* general search html */
+
+#searchHeader {
+    margin-bottom: 20px;
+}
+
+.searchResultList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: wrap;
+    align-content: center;
+}
+
+
+/* cards for view in list */
+
+.card {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin: 0 10px 10px 0;
+    min-width: 400px;
+}
+
+.cardLinkCont {
+    padding-bottom: 10px;
+}
+
+.cardLinks {
+    margin: 20px;
+}
+
+
+
+
 
 
 /* ##### MEDIA BREAKPOINTS ##### */
 
-li.sml {
-    display: none;
+:root {
+    --test: 52px;
 }
 
-li.med {
-    display: none;
-}
-
-@media screen and (max-width: 842px) {
-
-    li.big {
+/* default - big screen size */
+@media screen and (min-width: 843px){
+    li.sml {
         display: none;
     }
 
     li.med {
+        display: none;
+    }
+
+    li.big {
         display: block;
+    }
+
+    #menuButton {
+        display: none;
     }
 }
 
-@media screen and (max-width: 443px) {
+/* medium screen size */
+@media screen and (min-width: 444px) and (max-width: 842px) {
 
     li.big {
         display: none;
     }
 
     li.sml {
+        display: none;
+    }
+
+    li.med {
         display: block;
+    }
+
+    #menuButton {
+        display: none;
+    }
+}
+
+.btnActive {
+    background-color: cornflowerblue;
+}
+
+/* small screen size */
+@media screen and (max-width: 443px) {
+
+    li.big {
+        display: none;
+    }
+
+    li.med {
+        display: none;
+    }
+
+    li.sml {
+        display: block;
+    }
+
+    .sidenav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .myLinks {
+        display: none;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    #logoLiElement {
+        width: 100%;
+    }
+
+    #logoContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #menuButton {
+        display: block;
+        margin-left: auto;
+    }
+
+    li.sml {
+        width: 100%;
+    }
+
+    .toTheRight {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        align-items: center;
+        width: 90%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        margin-left: 5%;
+    }
+
+    .toTheRight a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin: 0 5% 0 5%;
     }
 }

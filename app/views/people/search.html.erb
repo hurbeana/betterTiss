@@ -1,7 +1,7 @@
 <% provide :subject, "People" %>
 <div class="row">
   <%= render 'shared/search' %>
-  <div>
+  <div class="searchResultList">
     <% if @people %>
       <%= render @people %>
     <% end %>

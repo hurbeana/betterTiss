@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside>
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
@@ -8,14 +8,40 @@
       </h1>
     </section>
   </aside>
-  <main class="col-md-8">
-    <h1>People favorite</h1>
-    <div class="row">
-      <%= render partial: 'people/person', collection: @user.people, as: :person %>
+  <div>
+
+    <button class="collapsible" onclick="openCollapsible(this)">Person favorites</button>
+    <div class="content">   <!-- maybe class row -->
+      <% if @user.people.empty? %>
+        <p>No favorites found.</p>
+      <% else %>
+        <%= render partial: 'people/person', collection: @user.people, as: :person %>
+      <% end %>
     </div>
-    <h1>Course favorites</h1>
-    <div class="row">
-      <%= render partial: 'courses/course', collection: @user.courses, as: :course %>
+    <button class="collapsible" onclick="openCollapsible(this)">Course favorites</button>
+    <div class="content">
+      <% if @user.courses.empty? %>
+        <p>No favorites found.</p>
+      <% else %>
+        <%= render partial: 'courses/course', collection: @user.courses, as: :course %>
+      <% end %>
     </div>
-  </main>
+    <button class="collapsible" onclick="openCollapsible(this)">Project favorites</button>
+    <div class="content">
+      <% if true %>
+        <p>No favorites found.</p>
+      <% else %>
+        <%= render partial: 'courses/course', collection: @user.courses, as: :course %> <!-- TODO CHANGE -->
+      <% end %>
+    </div>
+    <button class="collapsible" onclick="openCollapsible(this)">Theses favorites</button>
+    <div class="content">
+      <% if true %>
+        <p>No favorites found.</p>
+      <% else %>
+        <%= render partial: 'courses/course', collection: @user.courses, as: :course %> <!-- TODO CHANGE -->
+      <% end %>
+    </div>
+
+  </div>
 </div>
