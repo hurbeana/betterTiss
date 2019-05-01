@@ -1,14 +1,23 @@
-<div class="card bg-light mb-3 col-sm-4" style="width: 18rem; border: 1px solid rgba(0,0,0,.125); margin: 6px;">
-  <%= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top' if person.respond_to?(:p_image) && !person.p_image.nil? %>
-  <div class="card-header"><%= link_to "#{person.tiss_id.to_s} #{person.firstname} #{person.lastname}",
-                                       people_path(id: person.tiss_id) %></div>
+<div class="card">
+
+  <!-- %= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top' if person.respond_to?(:p_image) && !person.p_image.nil? % -->
+
+  <div class="card-header">
+    <%= content_tag :h2, person.firstname + "  " + person.lastname %>
+  </div>
+
   <div class="card-body">
     <p class="card-text">Gender: <%= person.gender %></p>
-    <p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
-    <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p>
+    <!-- p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
+    <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p -->
     <% if person.respond_to?(:p_link) && !person.p_link.nil? %>
       <p class="card-text">Link: <a href="<%= tiss_link + person.p_link %>">Tiss Link</a></p>
     <% end %>
-    <%= render 'shared/favorite', path: people_favorite_path, favobj: person %>
+
+    <div class="cardLinkCont">
+      <%= render 'shared/favorite', path: people_favorite_path, favobj: person %>
+      <%= link_to "Details", people_path(id: person.tiss_id), class: "cardLinks" %>
+    </div>
   </div>
+
 </div>

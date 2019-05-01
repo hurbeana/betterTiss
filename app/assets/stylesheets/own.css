@@ -176,6 +176,43 @@ li.dropdown {
 }
 
 
+/* general search html */
+
+#searchHeader {
+    margin-bottom: 20px;
+}
+
+.searchResultList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: wrap;
+    align-content: center;
+}
+
+
+/* cards for view in list */
+
+.card {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin: 0 10px 10px 0;
+    min-width: 400px;
+}
+
+.cardLinkCont {
+    padding-bottom: 10px;
+}
+
+.cardLinks {
+    margin: 20px;
+}
+
+
+
+
 
 
 /* ##### MEDIA BREAKPOINTS ##### */
