@@ -51,14 +51,16 @@ footer {
 }
 
 footer div p {
-    background-color: red;
+    background-color: #d0cecf;
     text-align: center; /* dunno how to */
 }
 
+/*
 footer div p:hover {
     background-color: blue;
     font-size: 2em;
 }
+*/
 
 #searches {
     margin-top: 5em;

@@ -52,6 +52,6 @@ class ActionDispatch::IntegrationTest
   end
 
   def log_out
-    click_link "Log out"
+    first("#boi").click
   end
 end
