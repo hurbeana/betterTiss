@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.6.1
 
-Things you may want to cover:
+* System dependencies:
+  * faker
+  * httparty
+  * jquery-rails
+  * will_paginate
+  * spring
+  * better_errors
+  * binding_of_caller
+  * bcrypt
+  * capybara
+  * minitst-reporters
 
-* Ruby version
+* Database creation: rails db:migrate
 
-* System dependencies
+* Database initialization: rails db:seed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite: rails t
