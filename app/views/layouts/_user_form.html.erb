@@ -17,8 +17,7 @@
       <%= f.password_field :password_confirmation, class: 'form-control, flexCont' %>
     </div>
 
-    </div>
   </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary mySubmit" %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

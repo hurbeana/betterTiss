@@ -24,18 +24,8 @@
     <li class="big"><%= link_to "Theses search", "", class: "button" %></li>
 
     <li class="sml">
-      <!-- div class="smlDropCont">
-        <a href="javascript:void(0);" onclick="openButtonMobileMenu(this)" class="button myLinks">Searches</a>
-        <div class="toTheRight" style="text-align: center">
-          <%= link_to "Person search", people_search_path, class: "button" %>
-          <%= link_to "Course search", "", class: "button" %>
-          <%= link_to "Project search", "", class: "button" %>
-          <%= link_to "Theses search", "", class: "button" %>
-        </div>
-      </div -->
-
       <a href="javascript:void(0)" onclick="openButtonMobileMenu(this)" class="button myLinks smlDropButton">Searches</a>
-      <div class="toTheRight" style="text-align: center">
+      <div class="toTheRight innerList" style="text-align: center">
         <%= link_to "Person search", people_search_path, class: "button" %>
         <%= link_to "Course search", "", class: "button" %>
         <%= link_to "Project search", "", class: "button" %>
@@ -52,19 +42,12 @@
           <%= link_to "Log out", logout_path, method: :delete, id: "boi", class: "button" %>
         </div>
       </li>
+      <li class="med big" style="float: right;"><%= link_to "Users", users_path, class: "button" %></li>
 
+      <li class="sml"><%= link_to "Users", users_path, class: "button myLinks" %></li>
       <li class="sml">
-        <!-- div class="smlDropCont">
-          <a href="javascript:void(0);" onclick="openButtonMobileMenu(this)" class="button myLinks"><%= current_user.name %></a>
-          <div class="toTheRight">
-            <%= link_to "Profile", current_user, class: "button" %>
-            <%= link_to "Settings", edit_user_path(current_user), class: "button" %>
-            <%= link_to "Log out", logout_path, method: :delete, class: "button" %>
-          </div>
-        </div -->
-
         <a href="javascript:void(0)" onclick="openButtonMobileMenu(this)" class="button myLinks smlDropButton"><%= current_user.name %></a>
-        <div class="toTheRight">
+        <div class="toTheRight innerList">
           <%= link_to "Profile", current_user, class: "button" %>
           <%= link_to "Settings", edit_user_path(current_user), class: "button" %>
           <%= link_to "Log out", logout_path, method: :delete, class: "button" %>

@@ -1,14 +1,19 @@
 function showMobileNav() {
     let x = document.getElementsByClassName("myLinks");
+    let inner = document.getElementsByClassName("innerList");
     let body = document.body;
+
+    for (let y of inner) {
+        if (y.style.display === "block") {
+            y.style.display = "none";
+        }
+    }
 
     for (let y of x) {
         if (y.style.display === "block") {
             y.style.display = "none";
-            body.style.paddingTop = '52px';
         } else {
             y.style.display = "block";
-            body.style.paddingTop = '207px';
         }
     }
 }
@@ -26,7 +31,7 @@ function openButtonMobileMenu(element) {
         //element.parentNode.classlist.add("btnActive");
     }
 
-    body.style.paddingTop = header.style.height;
+    //body.style.paddingTop = header.style.height;
 }
 
 function openCollapsible(element) {
