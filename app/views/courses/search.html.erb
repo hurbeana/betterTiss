@@ -1,7 +1,7 @@
-<% provide :subject, "Course" %>
+<% provide :subject, "Courses" %>
 <div class="row">
   <%= render 'shared/search' %>
-  <div>
+  <div class="searchResultList">
     <% if @courses %>
       <%= render @courses %>
     <% end %>

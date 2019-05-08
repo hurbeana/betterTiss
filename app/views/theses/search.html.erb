@@ -1,2 +1,9 @@
-<h1>Theses#search</h1>
-<p>Find me in app/views/theses/search.html.erb</p>
+<% provide :subject, "Theses" %>
+<div class="row">
+  <%= render 'shared/search' %>
+  <div class="searchResultList">
+    <% if @theses %>
+      <%= render @theses %>
+    <% end %>
+  </div>
+</div>

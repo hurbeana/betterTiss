@@ -6,6 +6,10 @@ class CoursesController < ApplicationController
   end
 
   def search
-    @courses = Course.search(params[:query]) if params[:query]
+    begin
+      @courses = Course.search(params[:query]) if params[:query]
+    rescue Searchable::SearchError => msg
+      flash.now[:error] = msg
+    end
   end
 end
