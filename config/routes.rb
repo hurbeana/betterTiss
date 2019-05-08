@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'theses/search'
+  get 'theses/show'
   root   'sessions#new'
   get    '/help', to: 'static_pages#help'
   get    '/about', to: 'static_pages#about'
@@ -19,6 +21,11 @@ Rails.application.routes.draw do
   get    '/courses/search'
   get    '/courses/(:id)', to: 'courses#show', as: :courses
   put    '/courses/favorite', to: 'courses#favorite', as: :courses_favorite
+
+  # projects
+  get   '/projects/search'
+  get   '/projects/(:id)', to: 'projects#show', as: :projects
+  put   '/projects/favorite', to: 'projects#favorite', as: :projects_favorite
 
   resources :users
 end

@@ -47,3 +47,8 @@ added collapsible containers in profile page for favorites.
 worked on search page - search result list.
 restructured content of result list elements (cards) and detail view of element.
 
+06.05.2019 - 2h
+fixed an issue with the mobile nav menu.
+added "Users" button to the nav bar. (to show other registered users, when logged in)
+restructured the Login HTML page.
+needed to change functions in the javascript file.
