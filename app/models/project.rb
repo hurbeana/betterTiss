@@ -1,0 +1,25 @@
+class Project < ApplicationRecord
+  include Searchable
+  include RESTObject
+
+  has_and_belongs_to_many :users
+
+  def self.tiss_search_link
+    "https://tiss.tuwien.ac.at/api/search/projectFullSearch/v1.0/projects?searchterm="
+  end
+
+  def self.get_id(hash)
+    return hash["id"] if hash.key?('id')
+    hash['tuVienna']['project']['id'] if hash.key?('tuVienna')
+  end
+
+  def self.filter_response(response)
+    response['tuVienna']['project']
+  end
+
+  def self.rest_resource
+    # + project ID
+    'https://tiss.tuwien.ac.at/api/pdb/rest/project/v2/'
+  end
+
+end
