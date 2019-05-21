@@ -4,6 +4,9 @@ module Searchable
   class SearchError < StandardError
   end
 
+  class NoSearchResults < StandardError
+  end
+
   module ClassMethods
     def tiss_search_link
       raise NotImplementedError
@@ -16,13 +19,18 @@ module Searchable
     def search(query)
       return if query.nil?
 
-      response = HTTParty.get(tiss_search_link + CGI.escape(query)).parsed_response
-      if response.key?("error_message")
-        raise SearchError.new response["error_message"]
+      if query == ''
+        raise SearchError.new 'Please enter a search query'
       end
-      response = response["result"]
 
-      result = Array.new
+      response = HTTParty.get(tiss_search_link + CGI.escape(query)).parsed_response
+      if response.key?('error_message')
+        raise SearchError.new response['error_message']
+      end
+
+      response = response['results']
+
+      result = Array[]
       response.each do |p|
         id = get_id(p)
         obj = find_by(tiss_id: id)
@@ -30,7 +38,13 @@ module Searchable
         obj.assign_hash p
         result << obj
       end
-      result
+
+      if result.empty?
+        raise NoSearchResults.new 'No results found'
+      else
+        result
+      end
+
     end
   end
 end

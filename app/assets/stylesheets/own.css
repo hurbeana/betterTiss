@@ -202,15 +202,55 @@ li.dropdown {
     border-color: black;
     border-width: 1px;
     margin: 0 10px 10px 0;
-    min-width: 400px;
+
+    /*min-width: 400px;
+    width: 500px;
+    max-width: 40%;
+    min-height: 100px;
+    max-height: 250px;*/
+
+    width: 400px;
+    height: 200px;
+
+    padding: 10px;
+}
+
+.card:hover {
+    -webkit-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
+    box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
 }
 
 .cardLinkCont {
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 }
 
 .cardLinks {
     margin: 20px;
+}
+
+.card-header {
+    overflow: hidden;
+    z-index: -1;
+}
+
+.card-header h2 {
+    margin: 0;
+}
+
+.fade {
+    position: relative;
+    height: 5.6em; /* exactly three lines */
+}
+.fade:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.8em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
 }
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_141756) do
+ActiveRecord::Schema.define(version: 2019_05_21_100201) do
 
   create_table "courses", force: :cascade do |t|
     t.string "tiss_id"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 2019_04_30_141756) do
     t.integer "user_id", null: false
     t.index ["person_id", "user_id"], name: "index_people_users_on_person_id_and_user_id"
     t.index ["user_id", "person_id"], name: "index_people_users_on_user_id_and_person_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "tiss_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "theses", force: :cascade do |t|
+    t.string "tiss_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

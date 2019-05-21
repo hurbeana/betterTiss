@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
       @projects = Project.search(params[:query]) if params[:query]
     rescue Searchable::SearchError => msg
       flash.now[:error] = msg
+    rescue Searchable::NoSearchResults => msg
+      flash.now[:notice] = msg
     end
   end
 

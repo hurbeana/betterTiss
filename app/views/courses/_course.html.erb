@@ -6,5 +6,6 @@
       <p class="card-text">Link: <%= link_to "Tiss", course.detail_url %></p>
     <% end %>
     <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>
+    <%= link_to "Details", courses_path(id: course.tiss_id), class: "cardLinks" %>
   </div>
 </div>

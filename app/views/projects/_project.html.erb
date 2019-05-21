@@ -1,2 +1,20 @@
-<h1>Projects#_project</h1>
-<p>Find me in app/views/projects/_project.html.erb</p>
+<div class="card">
+
+  <div class="card-header fade">
+    <%= content_tag :h2, project.title if project.respond_to? :title %>
+  </div>
+
+  <div class="card-body">
+
+    <% if project.respond_to?(:detail_url) && !project.detail_url.nil? %>
+      <p class="card-text">Link: <a href="<%= project.detail_url %>">Tiss Link</a></p>
+    <% end %>
+
+    <div class="cardLinkCont">
+      <%= render 'shared/favorite', path: projects_favorite_path, favobj: project %>
+      <%= link_to "Details", projects_path(id: project.tiss_id), class: "cardLinks" %>
+    </div>
+
+  </div>
+
+</div>
