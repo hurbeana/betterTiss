@@ -222,9 +222,14 @@ li.dropdown {
 }
 
 .card:hover {
+    /*
     -webkit-box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
     -moz-box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
     box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
+    */
+    -webkit-box-shadow: 0 4px 6px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 4px 6px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px 2px rgba(0,0,0,0.2);
 }
 
 .cardLinkCont {
@@ -279,6 +284,10 @@ li.dropdown {
 }
 
 
+.formTextField {
+    font-size: 1em;
+    background-color: #F7F7F7;
+}
 
 /* ##### MEDIA BREAKPOINTS ##### */
 
@@ -430,12 +439,11 @@ li.dropdown {
         margin: 0 10px 10px 10px;
     }
 
-    .smlLoginContainer label {
+    .formTextField {
         font-size: 1.2em;
     }
 
-    .smlLoginContainer .formTextField {
-        height: 30px;
+    .smlLoginContainer label {
         font-size: 1.2em;
     }
 
@@ -445,5 +453,25 @@ li.dropdown {
 
     .mySubmit {
         font-size: 1.2em;
+    }
+
+    .smlSearchContainer {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+    }
+
+
+    .fab {
+        width: 50px;
+        height: 50px;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .fab .fabIcon {
+        width: 45px;
+        height: 45px;
+
     }
 }
