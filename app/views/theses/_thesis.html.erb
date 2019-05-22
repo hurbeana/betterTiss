@@ -1,2 +1,22 @@
-<h1>Theses#_thesis</h1>
-<p>Find me in app/views/theses/_thesis.html.erb</p>
+<div class="card cardThesesSize">
+
+  <div class="card-header fade3">
+    <%= content_tag :h2, thesis.title if thesis.respond_to? :title %>
+  </div>
+
+  <% if thesis.respond_to?(:detail_url) && !thesis.detail_url.nil? %>
+    <p class="card-text">Link: <%= link_to "Tiss Link", thesis.detail_url, :target => :_blank %></p>
+  <% end %>
+
+  <% if thesis.respond_to?(:short) && !thesis.short.nil? && !thesis.short.empty? %>
+    <div class="fade2">
+      <p><span style="font-weight: bold">Short: </span><%= thesis.short %></p>
+    </div>
+  <% end %>
+
+  <div class="cardLinkCont">
+    <%= render 'shared/favorite', path: theses_favorite_path, favobj: thesis %>
+    <%= link_to "Details", theses_path(id: thesis.tiss_id), class: "cardLinks" %>
+  </div>
+
+</div>

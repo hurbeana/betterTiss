@@ -42,3 +42,9 @@ function openCollapsible(element) {
         content.style.maxHeight = content.scrollHeight + "px";
     }
 }
+
+
+/* for burger menu toggle */
+function toggleBurgerMenu(x) {
+    x.classList.toggle("change");
+}

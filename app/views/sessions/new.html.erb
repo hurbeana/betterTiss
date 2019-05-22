@@ -3,23 +3,35 @@
 
 <%= form_for(:session, url: login_path) do |f| %>
 
-  <div class="flexRow">
+  <!-- for med, big screen sizes -->
+  <div class="med big flexRow">
     <div class="flexCol">
       <%= f.label :email, class: 'flexCont' %>
       <%= f.label :password, class: 'flexCont' %>
     </div>
 
     <div class="flexCol">
-      <%= f.email_field :email, class: 'form-control, flexCont' %>
-      <%= f.password_field :password, class: 'form-control, flexCont' %>
+      <%= f.email_field :email, class: 'form-control flexCont' %>
+      <%= f.password_field :password, class: 'form-control flexCont' %>
     </div>
-
   </div>
 
-  <div>
+  <!-- for sml screen sizes -->
+  <div class="sml">
+    <div class="smlLoginContainer">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control formTextField' %>
+    </div>
+    <div class="smlLoginContainer">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control formTextField' %>
+    </div>
+  </div>
+
+  <div id="loginMemberMeContainer">
     <%= f.label :remember_me, class: "checkbox inline" do %>
       <%= f.check_box :remember_me %>
-      <span>Remember me on this computer</span>
+      <span>Remember me on this device</span>
     <% end %>
   </div>
 

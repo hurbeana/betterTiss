@@ -4,7 +4,12 @@
     <li id="logoLiElement">
       <div id="logoContainer">
         <%= link_to "BetterTiss", root_path, id: "logo" %>
-        <a href="javascript:void(0);" onclick="showMobileNav()" id="menuButton">test</a>
+        <!--a href="javascript:void(0);" onclick="showMobileNav()" id="menuButton">test</a-->
+        <div class="burgerContainer" id="menuButton" onclick="toggleBurgerMenu(this); showMobileNav()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
       </div>
     </li>
 

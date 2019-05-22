@@ -16,6 +16,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 999; /* always on top */
 }
 
 h1 {
@@ -24,6 +25,10 @@ h1 {
 
 h2 {
     font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
 }
 
 html, body {
@@ -76,7 +81,7 @@ footer div p:hover {
     padding: 0.5em 0 0.5em 0;
     margin: 1em;
     border-radius: 0.5em;
-    box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.33);
+    box-shadow: 1px 3px 9px 1px rgba(0, 0, 0, 0.33);
 }
 
 .mySubmit:hover {
@@ -86,10 +91,6 @@ footer div p:hover {
     padding: 0.7em 0 0.7em 0;
     margin: 0.8em;
 }
-
-
-
-
 
 
 ul {
@@ -109,7 +110,7 @@ li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 16.5px;   /* well ok */
+    padding: 16.5px; /* well ok */
     text-decoration: none;
 }
 
@@ -126,7 +127,7 @@ li.dropdown {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -147,27 +148,10 @@ li.dropdown {
 }
 
 
-
-
-
 /* user edit page */
 
 .gravatar_edit {
     padding-bottom: 35px;
-}
-
-.flexRow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 35px;
-}
-
-.flexCol {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 
 .flexCont {
@@ -197,32 +181,56 @@ li.dropdown {
 
 /* cards for view in list */
 
+/* card background color */
+:root {
+    --red: 255;
+    --green: 255;
+    --blue: 255;
+}
+
+.cardPeopleSize {
+    width: 300px;
+    height: 150px;
+}
+
+.cardCoursesSize {
+    width: 400px;
+    height: 200px;
+}
+
+.cardProjectsSize {
+    width: 400px;
+    height: 200px;
+}
+
+.cardThesesSize {
+    width: 400px;
+    height: 220px;
+}
+
 .card {
     border-style: solid;
     border-color: black;
     border-width: 1px;
     margin: 0 10px 10px 0;
 
-    /*min-width: 400px;
-    width: 500px;
-    max-width: 40%;
-    min-height: 100px;
-    max-height: 250px;*/
-
-    width: 400px;
-    height: 200px;
+    background-color: rgb(var(--red), var(--green), var(--blue));
+    z-index: 10;
+    position: relative;
 
     padding: 10px;
 }
 
 .card:hover {
-    -webkit-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
-    -moz-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
-    box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
+    box-shadow: 5px 5px 11px -3px rgba(0, 0, 0, 0.69);
 }
 
 .cardLinkCont {
-    /*padding-bottom: 10px;*/
+    bottom: 10px;
+    position: absolute;
+    left: 28%;
 }
 
 .cardLinks {
@@ -231,30 +239,44 @@ li.dropdown {
 
 .card-header {
     overflow: hidden;
-    z-index: -1;
+    z-index: 11;
 }
 
 .card-header h2 {
     margin: 0;
 }
 
-.fade {
+.fade3 {
     position: relative;
     height: 5.6em; /* exactly three lines */
 }
-.fade:after {
+
+.fade3:after {
     content: "";
     text-align: right;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 70%;
+    width: 30%;
     height: 1.8em;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    background: linear-gradient(to right, rgba(var(--red), var(--green), var(--blue), 0), rgba(var(--red), var(--green), var(--blue), 1) 50%);
 }
 
+.fade2 {
+    position: relative;
+    height: 2.4em; /* exactly three lines */
+}
 
-
+.fade2:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(var(--red), var(--green), var(--blue), 0), rgba(var(--red), var(--green), var(--blue), 1) 50%);
+}
 
 
 
@@ -265,41 +287,69 @@ li.dropdown {
 }
 
 /* default - big screen size */
-@media screen and (min-width: 843px){
-    li.sml {
+@media screen and (min-width: 843px) {
+    li.sml, .sml {
         display: none;
     }
 
-    li.med {
+    li.med, .med {
         display: none;
     }
 
-    li.big {
+    li.big, .big {
         display: block;
     }
 
     #menuButton {
         display: none;
+    }
+
+    .flexRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 35px;
+    }
+
+    .flexCol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 }
 
 /* medium screen size */
 @media screen and (min-width: 444px) and (max-width: 842px) {
 
-    li.big {
+    li.big, .big {
         display: none;
     }
 
-    li.sml {
+    li.sml, .sml {
         display: none;
     }
 
-    li.med {
+    li.med, .med {
         display: block;
     }
 
     #menuButton {
         display: none;
+    }
+
+    .flexRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 35px;
+    }
+
+    .flexCol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 }
 
@@ -310,15 +360,15 @@ li.dropdown {
 /* small screen size */
 @media screen and (max-width: 443px) {
 
-    li.big {
+    li.big, .big {
         display: none;
     }
 
-    li.med {
+    li.med, .med {
         display: none;
     }
 
-    li.sml {
+    li.sml, .sml {
         display: block;
     }
 
@@ -360,7 +410,7 @@ li.dropdown {
         background-color: #f9f9f9;
         align-items: center;
         width: 90%;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
         margin-left: 5%;
     }
@@ -372,5 +422,28 @@ li.dropdown {
         display: block;
         text-align: center;
         margin: 0 5% 0 5%;
+    }
+
+    .smlLoginContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px 10px 10px;
+    }
+
+    .smlLoginContainer label {
+        font-size: 1.2em;
+    }
+
+    .smlLoginContainer .formTextField {
+        height: 30px;
+        font-size: 1.2em;
+    }
+
+    #loginMemberMeContainer {
+        margin-top: 50px;
+    }
+
+    .mySubmit {
+        font-size: 1.2em;
     }
 }

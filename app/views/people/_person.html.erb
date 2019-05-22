@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card cardPeopleSize">
 
   <!-- %= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top' if person.respond_to?(:p_image) && !person.p_image.nil? % -->
 
@@ -6,18 +6,16 @@
     <%= content_tag :h2, person.firstname + "  " + person.lastname %>
   </div>
 
-  <div class="card-body">
-    <p class="card-text">Gender: <%= person.gender %></p>
-    <!-- p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
+  <p class="card-text">Gender: <%= person.gender %></p>
+  <!-- p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
     <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p -->
-    <% if person.respond_to?(:p_link) && !person.p_link.nil? %>
-      <p class="card-text">Link: <a href="<%= tiss_link + person.p_link %>">Tiss Link</a></p>
-    <% end %>
+  <% if person.respond_to?(:p_link) && !person.p_link.nil? %>
+    <p class="card-text">Link: <a href="<%= tiss_link + person.p_link %>">Tiss Link</a></p>
+  <% end %>
 
-    <div class="cardLinkCont">
-      <%= render 'shared/favorite', path: people_favorite_path, favobj: person %>
-      <%= link_to "Details", people_path(id: person.tiss_id), class: "cardLinks" %>
-    </div>
+  <div class="cardLinkCont">
+    <%= render 'shared/favorite', path: people_favorite_path, favobj: person %>
+    <%= link_to "Details", people_path(id: person.tiss_id), class: "cardLinks" %>
   </div>
 
 </div>

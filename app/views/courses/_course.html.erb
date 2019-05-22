@@ -1,11 +1,14 @@
-<div class="card bg-light mb-3 col-sm-4" style="width: 18rem; border: 1px solid rgba(0,0,0,.125); margin: 6px;">
-  <div class="card-header"><%= link_to course.title,
-                                       courses_path(id: course.tiss_id) %></div>
-  <div class="card-body">
-    <% if course.respond_to?(:detail_url) && !course.detail_url.nil? %>
-      <p class="card-text">Link: <%= link_to "Tiss", course.detail_url %></p>
-    <% end %>
-    <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>
-    <%= link_to "Details", courses_path(id: course.tiss_id), class: "cardLinks" %>
+<div class="card cardCoursesSize">
+
+  <div class="card-header">
+    <%= link_to course.title, courses_path(id: course.tiss_id) %>
   </div>
+
+  <% if course.respond_to?(:detail_url) && !course.detail_url.nil? %>
+    <p class="card-text">Link: <%= link_to "Tiss", course.detail_url %></p>
+  <% end %>
+
+  <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>
+  <%= link_to "Details", courses_path(id: course.tiss_id), class: "cardLinks" %>
+
 </div>

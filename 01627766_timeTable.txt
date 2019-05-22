@@ -67,9 +67,20 @@ recherche for correct way to install components
 followed installation guide - "https://gorails.com/setup/windows/10"
 trying to set up PostgreSQL instead of sqlite3
 
-20.05.2019 - ??h 
+20.05.2019 - 4h 
 error at bundle install/update - failed at win32console (can't find windows.h)
+cleaned up gems
+resolved sqlite3 issue with my partner - he found a version that worked with this rails version on github.
 
+21.05.2019 - 3h
+added missing database tables for projects and theses
+improved the search function - error messages / empty search query
+changed the search result card layout
+
+22.05.2019 - ??h
+changed mobile menu button to animated burger menu button
+working on card sizes for search results for different items / device screen sizes
+woring on further responsive layout for mobile view
 
 
 
