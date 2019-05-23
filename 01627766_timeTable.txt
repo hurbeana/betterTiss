@@ -77,11 +77,15 @@ added missing database tables for projects and theses
 improved the search function - error messages / empty search query
 changed the search result card layout
 
-22.05.2019 - ??h
+22.05.2019 - 3h
 changed mobile menu button to animated burger menu button
 working on card sizes for search results for different items / device screen sizes
 woring on further responsive layout for mobile view
 
+23.05.2019 - ??h
 
 
-~ 16 h left
+
+
+
+~ 16 h left ### ?

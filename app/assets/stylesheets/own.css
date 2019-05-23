@@ -289,6 +289,41 @@ li.dropdown {
     background-color: #F7F7F7;
 }
 
+
+/* person detail view */
+.imgPerson {
+    height: auto;
+    min-width: 128px;
+    max-width: 384px;
+}
+
+.flexRowPerson {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.flexColPersonL {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.flexColPersonR {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
 /* ##### MEDIA BREAKPOINTS ##### */
 
 :root {

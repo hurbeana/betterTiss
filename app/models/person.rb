@@ -13,6 +13,9 @@ class Person < ApplicationRecord
     create_if_exists hash, 'adressbuch_visitenkarte', name: :p_link
     create_if_exists hash, 'adressbuch_benutzerbild', name: :p_image
     create_if_exists hash, 'picture_uri', name: :p_image
+    create_if_exists hash, 'preceding_titles', name: :prefixTitle
+    create_if_exists hash, 'postpositioned_titles', name: :postfixTitle
+    create_if_exists hash, 'main_email', name: :email
   end
 
   def self.tiss_search_link

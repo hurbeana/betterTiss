@@ -2,19 +2,33 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
+
       <h1>Person Details </h1>
-      <%= image_tag tiss_link + @person.p_image, size: 256 if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
-      <div class="card-header"><%= @person.tiss_id.to_s + " " + @person.firstname + " " + @person.lastname %></div>
-      <div class="card-body">
-        <p class="card-text">Gender: <%= @person.gender %></p>
-        <% if @person.respond_to? :prefixTitle %>
-          <p class="card-text">Prefix Titel: <%= @person&.prefixTitle %></p>
-        <% end %>
-        <% if @person.respond_to? :postfixTitle %>
-          <p class="card-text">Postfix Titel: <%= @person.postfixTitle %></p>
-        <% end %>
-        <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
+
+      <%= image_tag tiss_link + @person.p_image, class: "imgPerson" if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
+
+      <div class="flexRowPerson">
+        <div class="flexColPersonL">
+          <p class="flexCont">Name: </p>
+          <p class="flexCont">Tiss id: </p>
+          <%= content_tag :p, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
+          <%= content_tag :p, "Prefix Titles: ", class: "flexCont" if @person.respond_to? :prefixTitle %>
+          <%= content_tag :p, "Postfix Titles: ", class: "flexCont" if @person.respond_to? :postfixTitle %>
+          <%= content_tag :p, "eMail: ", class: "flexCont" if @person.respond_to? :email %>
+        </div>
+
+        <div class="flexColPersonR">
+          <%= content_tag :p, @person.firstname + " " + @person.lastname, class: "flexCont" %>
+          <%= content_tag :p, @person.tiss_id.to_s, class: "flexCont" %>
+          <%= content_tag :p, @person.gender, class: "flexCont" if @person.respond_to? :gender %>
+          <%= content_tag :p, @person&.prefixTitle, class: "flexCont" if @person.respond_to? :prefixTitle %>
+          <%= content_tag :p, @person.postfixTitle, class: "flexCont" if @person.respond_to? :postfixTitle %>
+          <%= content_tag :p, @person.email, class: "flexCont" if @person.respond_to? :email %>
+        </div>
       </div>
+
+      <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
+
     </section>
   </aside>
 </div>
