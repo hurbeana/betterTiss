@@ -28,18 +28,18 @@
     </div>
     <button class="collapsible" onclick="openCollapsible(this)">Project favorites</button>
     <div class="content">
-      <% if true %>
+      <% if @user.projects.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'courses/course', collection: @user.courses, as: :course %> <!-- TODO CHANGE -->
+        <%= render partial: 'projects/project', collection: @user.projects, as: :project %>
       <% end %>
     </div>
     <button class="collapsible" onclick="openCollapsible(this)">Theses favorites</button>
     <div class="content">
-      <% if true %>
+      <% if @user.theses.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'courses/course', collection: @user.courses, as: :course %> <!-- TODO CHANGE -->
+        <%= render partial: 'theses/thesis', collection: @user.theses, as: :thesis %>
       <% end %>
     </div>
 

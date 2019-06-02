@@ -1,4 +1,5 @@
 class ThesesController < ApplicationController
+  include Favoritable
 
   def search
     begin

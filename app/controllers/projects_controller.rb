@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  include Favoritable
 
   def search
     begin
