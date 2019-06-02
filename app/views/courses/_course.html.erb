@@ -1,11 +1,12 @@
 <div class="card cardCoursesSize">
 
   <div class="card-header">
+    <h2> Course: </h2>
     <%= link_to course.title, courses_path(id: course.tiss_id) %>
   </div>
 
   <% if course.respond_to?(:detail_url) && !course.detail_url.nil? %>
-    <p class="card-text">Link: <%= link_to "Tiss", course.detail_url %></p>
+    <p class="card-text">Link: <%= link_to "Tiss", course.detail_url, :target => :_blank %></p>
   <% end %>
 
   <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>

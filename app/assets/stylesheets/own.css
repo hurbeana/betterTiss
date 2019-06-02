@@ -195,17 +195,17 @@ li.dropdown {
 
 .cardCoursesSize {
     width: 400px;
-    height: 200px;
+    height: 140px;
 }
 
 .cardProjectsSize {
     width: 400px;
-    height: 200px;
+    height: 160px;
 }
 
 .cardThesesSize {
     width: 400px;
-    height: 220px;
+    height: 210px;
 }
 
 .card {
@@ -232,10 +232,16 @@ li.dropdown {
     box-shadow: 0 4px 6px 2px rgba(0,0,0,0.2);
 }
 
-.cardLinkCont {
+.cardCoursesSize .cardLinkCont, .cardProjectsSize .cardLinkCont, .cardThesesSize .cardLinkCont {
     bottom: 10px;
     position: absolute;
     left: 28%;
+}
+
+.cardPeopleSize .cardLinkCont {
+    bottom: 10px;
+    position: absolute;
+    left: 22%;
 }
 
 .cardLinks {

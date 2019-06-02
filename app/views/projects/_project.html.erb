@@ -5,7 +5,7 @@
   </div>
 
   <% if project.respond_to?(:detail_url) && !project.detail_url.nil? %>
-    <p class="card-text">Link: <a href="<%= project.detail_url %>">Tiss Link</a></p>
+    <p class="card-text">Link: <%= link_to "Tiss Link", project.detail_url, :target => :_blank %> </p>
   <% end %>
 
   <div class="cardLinkCont">

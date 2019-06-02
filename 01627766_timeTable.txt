@@ -85,6 +85,9 @@ woring on further responsive layout for mobile view
 23.05.2019 - ??h
 
 
+02.06.2019 - ??h
+improved user experience (links open in new tab)
+
 
 
 
