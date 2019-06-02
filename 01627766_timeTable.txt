@@ -82,8 +82,10 @@ changed mobile menu button to animated burger menu button
 working on card sizes for search results for different items / device screen sizes
 woring on further responsive layout for mobile view
 
-23.05.2019 - ??h
-
+23.05.2019 - 1h
+fixed variables for person detail - (e.g. pre- and postfix titles of 
+person that are differently labeled in the detail format)
+now mapped to the same name, if they are present
 
 02.06.2019 - ??h
 improved user experience (links open in new tab)

@@ -93,7 +93,7 @@ footer div p:hover {
 }
 
 
-ul {
+.header_ul {
     list-style-type: none;
     margin: 0;
     padding-left: 10px;
@@ -324,6 +324,42 @@ li.dropdown {
 
 
 
+
+/* alert - flash cards */
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    min-height: 5%;
+    max-height: 20%;
+
+    border-radius: 15px; /* 10px 35px */
+
+    margin: 5px 25% 5px 25%;
+}
+
+.alert-success {
+    background: rgba(0, 168, 16, 0.420);
+}
+
+.alert-danger, .alert-error {
+    background: rgba(255, 10, 0, 0.42);
+}
+.alert hr {
+    display: none;
+}
+.alert ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.alert-notice {
+    background: rgba(0, 85, 255, 0.42);
+}
 
 
 

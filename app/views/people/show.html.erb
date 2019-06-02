@@ -9,12 +9,25 @@
 
       <div class="flexRowPerson">
         <div class="flexColPersonL">
+
           <p class="flexCont">Name: </p>
           <p class="flexCont">Tiss id: </p>
-          <%= content_tag :p, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
-          <%= content_tag :p, "Prefix Titles: ", class: "flexCont" if @person.respond_to? :prefixTitle %>
-          <%= content_tag :p, "Postfix Titles: ", class: "flexCont" if @person.respond_to? :postfixTitle %>
-          <%= content_tag :p, "eMail: ", class: "flexCont" if @person.respond_to? :email %>
+
+          <% if @person.respond_to? :gender %>
+            <%= content_tag :p, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
+          <% end %>
+
+          <% if @person.respond_to? :prefixTitle %>
+            <%= content_tag :p, "Prefix Titles: ", class: "flexCont" %>
+          <% end %>
+
+          <% if @person.respond_to? :postfixTitle %>
+            <%= content_tag :p, "Postfix Titles: ", class: "flexCont" %>
+          <% end %>
+
+          <% if @person.respond_to? :email %>
+            <%= content_tag :p, "eMail: ", class: "flexCont" if @person.respond_to? :email %>
+          <% end %>
         </div>
 
         <div class="flexColPersonR">

@@ -1,9 +1,13 @@
 <% provide(:title, @course.title['de']) %>
 <div class="row">
+
   <aside class="col-md-4">
     <section class="user_info">
+
       <h1>Course Details </h1>
+
       <div class="card-header"><%= @course.title['de'] %></div>
+
       <div class="card-body">
         <p class="card-text"><%= raw @course.objective['de'] %></p>
         <p class="card-text"><%= raw @course.teachingContent['de'] %></p>
@@ -13,6 +17,7 @@
         <p class="card-text"><%= raw @course.instituteName['de'] %></p>
         <%= render 'shared/favorite', path: courses_favorite_path, favobj: @course %>
       </div>
+
     </section>
   </aside>
 </div>
