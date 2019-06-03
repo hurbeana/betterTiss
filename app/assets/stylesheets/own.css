@@ -212,7 +212,7 @@ li.dropdown {
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    margin: 0 10px 10px 0;
+    margin: 5px;
 
     background-color: rgb(var(--red), var(--green), var(--blue));
     z-index: 10;

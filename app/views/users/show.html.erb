@@ -15,7 +15,7 @@
       <% if @user.people.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'people/person', collection: @user.people, as: :person %>
+        <%= render @user.people %>
       <% end %>
     </div>
     <button class="collapsible" onclick="openCollapsible(this)">Course favorites</button>
@@ -23,7 +23,7 @@
       <% if @user.courses.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'courses/course', collection: @user.courses, as: :course %>
+        <%= render @user.courses %>
       <% end %>
     </div>
     <button class="collapsible" onclick="openCollapsible(this)">Project favorites</button>
@@ -31,7 +31,7 @@
       <% if @user.projects.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'projects/project', collection: @user.projects, as: :project %>
+        <%= render @user.projects %>
       <% end %>
     </div>
     <button class="collapsible" onclick="openCollapsible(this)">Theses favorites</button>
@@ -39,7 +39,7 @@
       <% if @user.theses.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render partial: 'theses/thesis', collection: @user.theses, as: :thesis %>
+        <%= render @user.theses %>
       <% end %>
     </div>
 

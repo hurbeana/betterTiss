@@ -87,10 +87,15 @@ fixed variables for person detail - (e.g. pre- and postfix titles of
 person that are differently labeled in the detail format)
 now mapped to the same name, if they are present
 
-02.06.2019 - ??h
+02.06.2019 - 2h
 improved user experience (links open in new tab)
+finished result card sizes
+theses and projects favorite works
 
 
 
 
-~ 16 h left ### ?
+
+
+
+atm ~ 55.5h
