@@ -25,39 +25,26 @@
         <%= content_tag :p, @thesis.t_thesis_type %>
       <% end %>
 
-      <div class="flexRowProject">
-        <div class="flexColProjectL">
-          <% if @thesis.respond_to? :t_institute_name %>
-            <h3>Institute name:</h3>
-          <% end %>
-          <% if @thesis.respond_to? :t_institute_code %>
-            <h3>Institute code:</h3>
-          <% end %>
-          <% if @thesis.respond_to? :t_faculty_name %>
-            <h3>Faculty name:</h3>
-          <% end %>
-          <% if @thesis.respond_to? :t_faculty_code %>
-            <h3>Faculty code:</h3>
-          <% end %>
-        </div>
 
-        <div class="flexColProjectR">
-          <% if @thesis.respond_to? :t_institute_name %>
-            <%= content_tag :p, @thesis.t_institute_name %>
-          <% end %>
-          <% if @thesis.respond_to? :t_institute_code %>
-            <%= content_tag :p, @thesis.t_institute_code %>
-          <% end %>
-          <% if @thesis.respond_to? :t_faculty_name %>
-            <%= content_tag :p, @thesis.t_faculty_name %>
-          <% end %>
-          <% if @thesis.respond_to? :t_faculty_code %>
-            <%= content_tag :p, @thesis.t_faculty_code %>
-          <% end %>
-        </div>
-      </div>
+      <% if @thesis.respond_to? :t_institute_name %>
+        <h3>Institute name:</h3>
+        <%= content_tag :p, @thesis.t_institute_name %>
+      <% end %>
+      <% if @thesis.respond_to? :t_institute_code %>
+        <h3>Institute code:</h3>
+        <%= content_tag :p, @thesis.t_institute_code %>
+      <% end %>
+      <% if @thesis.respond_to? :t_faculty_name %>
+        <h3>Faculty name:</h3>
+        <%= content_tag :p, @thesis.t_faculty_name %>
+      <% end %>
+      <% if @thesis.respond_to? :t_faculty_code %>
+        <h3>Faculty code:</h3>
+        <%= content_tag :p, @thesis.t_faculty_code %>
+      <% end %>
 
-      <% if @thesis.respond_to? :t_advisor_oid %>
+
+      <% if (@thesis.respond_to? :t_advisor_oid) && !@thesis.t_advisor_oid.nil? && !@thesis.t_advisor_oid.empty? %>
         <h2>Advisor</h2>
         <div class="flexRowProject">
           <div class="flexColProjectL">
@@ -94,7 +81,7 @@
         </div>
       <% end %>
 
-      <% if @thesis.respond_to? :t_assistant_oid %>
+      <% if (@thesis.respond_to? :t_assistant_oid) && !@thesis.t_assistant_oid.nil? && !@thesis.t_assistant_oid.empty? %>
         <h2>Assistant</h2>
         <div class="flexRowProject">
           <div class="flexColProjectL">
