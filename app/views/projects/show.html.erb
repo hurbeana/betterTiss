@@ -1,1 +1,77 @@
-<% provide(:title, @project.title['de']) %>
+<% provide(:title, @project.p_title) %>
+<div class="row">
+
+  <aside class="col-md-4">
+    <section class="project_detail">
+
+      <h1>Project Details</h1>
+
+      <div class="only_fav">
+        <%= render 'shared/favorite', path: projects_favorite_path, favobj: @project, class: "only_fav" %>
+      </div>
+
+      <div class="card-header">
+        <h2>Title</h2>
+        <p><%= @project.p_title %></p>
+      </div>
+
+      <% if (@project.respond_to? :p_short) && !@project.p_short.nil? && !@project.p_short.empty? %>
+        <h2>Short</h2>
+        <%= content_tag :p, @project.p_short %>
+      <% end %>
+
+      <div class="flexRowProject">
+        <div class="flexColProjectL">
+          <% if @project.respond_to? :contractBegin %>
+            <h3>Contract begin:</h3>
+          <% end %>
+          <% if @project.respond_to? :contractEnd %>
+            <h3>Contract end:</h3>
+          <% end %>
+          <% if @project.respond_to? :projectBegin %>
+            <h3>Project begin:</h3>
+          <% end %>
+          <% if @project.respond_to? :projectEnd %>
+            <h3>Project end:</h3>
+          <% end %>
+        </div>
+
+        <div class="flexColProjectR">
+          <% if @project.respond_to? :contractBegin %>
+            <%= content_tag :p, @project.contractBegin %>
+          <% end %>
+          <% if @project.respond_to? :contractEnd %>
+            <%= content_tag :p, @project.contractEnd %>
+          <% end %>
+          <% if @project.respond_to? :projectBegin %>
+            <%= content_tag :p, @project.projectBegin %>
+          <% end %>
+          <% if @project.respond_to? :projectEnd %>
+            <%= content_tag :p, @project.projectEnd %>
+          <% end %>
+        </div>
+      </div>
+
+      <% if (@project.respond_to? :projectForm) && !@project.projectForm.nil? && !@project.projectForm.empty? %>
+        <h2>Project form</h2>
+        <%= content_tag :p, @project.projectForm %>
+      <% end %>
+
+      <% if (@project.respond_to? :projectType) && !@project.projectType.nil? && !@project.projectType.empty? %>
+        <h2>Project type</h2>
+        <%= content_tag :p, @project.projectType %>
+      <% end %>
+
+      <% if (@project.respond_to? :p_research_area) && !@project.p_research_area.nil? && !@project.p_research_area.empty? %>
+        <h2>Research area</h2>
+        <%= content_tag :p, @project.p_research_area %>
+      <% end %>
+
+      <% if (@project.respond_to? :p_financier) && !@project.p_financier.nil? && !@project.p_financier.empty? %>
+        <h2>Financier</h2>
+        <%= content_tag :p, @project.p_financier %>
+      <% end %>
+
+    </section>
+  </aside>
+</div>

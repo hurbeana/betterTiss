@@ -15,33 +15,33 @@
         <p><%= @course.c_title %></p>
       </div>
 
-      <% if (@course.respond_to? :c_institute_name) && !@course.c_institute_name.nil? %>
+      <% if (@course.respond_to? :c_institute_name) && !@course.c_institute_name.nil? && !@course.c_institute_name.empty? %>
         <h2>Institution name</h2>
         <p><%= @course.c_institute_name %></p>
       <% end %>
 
-      <% if (@course.respond_to? :c_institute_code) && !@course.c_institute_code.nil? %>
+      <% if (@course.respond_to? :c_institute_code) && !@course.c_institute_code.nil? && !@course.c_institute_code.empty? %>
         <h2>Institution code</h2>
         <p><%= @course.c_institute_code %></p>
       <% end %>
 
-      <% if (@course.respond_to? :c_short) && !@course.c_short.nil? %>
+      <% if (@course.respond_to? :c_short) && !@course.c_short.nil? && !@course.c_short.empty? %>
         <h2>Short</h2>
         <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_short) %></p>
       <% end %>
 
-      <% if (@course.respond_to? :c_teaching_content) && !@course.c_teaching_content.nil? %>
+      <% if (@course.respond_to? :c_teaching_content) && !@course.c_teaching_content.nil? && !@course.c_teaching_content.empty? %>
         <h2>Teaching content</h2>
         <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_teaching_content) %></p>
       <% end %>
 
 
-      <% if (@course.respond_to? :c_additional_information) && !@course.c_additional_information.nil? %>
+      <% if (@course.respond_to? :c_additional_information) && !@course.c_additional_information.nil? && !@course.c_additional_information.empty? %>
         <h2>Additional information</h2>
         <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_additional_information) %></p>
       <% end %>
 
-      <% if (@course.respond_to? :c_lecture_notes) && !@course.c_lecture_notes.nil? %>
+      <% if (@course.respond_to? :c_lecture_notes) && !@course.c_lecture_notes.nil? && !@course.c_lecture_notes.empty? %>
         <h2>Lecture notes</h2>
         <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_lecture_notes) %></p>
       <% end %>

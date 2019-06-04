@@ -196,17 +196,17 @@ li.dropdown {
 
 .cardCoursesSize {
     width: 400px;
-    height: 180px;
+    height: 165px;
 }
 
 .cardProjectsSize {
     width: 400px;
-    height: 160px;
+    height: 210px;
 }
 
 .cardThesesSize {
     width: 400px;
-    height: 210px;
+    height: 195px;
 }
 
 .card {
@@ -257,6 +257,11 @@ li.dropdown {
 
 .card-header h2 {
     margin: 0;
+}
+
+.card-text {
+    margin: 0;
+    padding: 10px;
 }
 
 .fade3 {
@@ -383,17 +388,46 @@ li.dropdown {
 
 
 
-.course_detail h2 {
+.course_detail h2, .project_detail h2 {
     padding: 0;
     margin: 0;
 }
-.course_detail p {
+.course_detail p, .project_detail p {
     padding: 0 0 20px 0;
     margin: 0;
 }
 
 .only_fav {
     padding-bottom: 10px;
+}
+
+
+.flexRowProject {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.flexRowProject h3 {
+    margin: 0;
+    padding: 0 0 1px 0;
+}
+.flexRowProject p {
+    margin: 0;
+    padding: 3px 0 3px 10px;
+}
+
+.flexColProjectL {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.flexColProjectR {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 

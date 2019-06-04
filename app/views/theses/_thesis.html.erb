@@ -12,7 +12,7 @@
 
   <% if thesis.respond_to?(:short) && !thesis.short.nil? && !thesis.short.empty? %>
     <div class="fade2">
-      <p><span style="font-weight: bold">Short: </span><%= thesis.short %></p>
+      <span style="font-weight: bold">Short: </span><%= ActionView::Base.full_sanitizer.sanitize(thesis.short) %>
     </div>
   <% end %>
 

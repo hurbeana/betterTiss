@@ -1,11 +1,15 @@
 <% provide(:title, @person.firstname + " " + @person.lastname) %>
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
+    <section class="person_detail">
 
-      <h1>Person Details </h1>
+      <h1>Person Details</h1>
 
       <%= image_tag tiss_link + @person.p_image, class: "imgPerson" if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
+
+      <div class="only_fav">
+        <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
+      </div>
 
       <div class="flexRowPerson">
         <div class="flexColPersonL">
@@ -39,8 +43,6 @@
           <%= content_tag :p, @person.email, class: "flexCont" if @person.respond_to? :email %>
         </div>
       </div>
-
-      <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
 
     </section>
   </aside>
