@@ -7,6 +7,22 @@ class Course < ApplicationRecord
 
   has_and_belongs_to_many :users
 
+  def assign_hash(hash)
+    super hash
+    create_if_exists hash, 'title', 'de', name: :c_title
+    create_if_exists hash, 'title', name: :c_title
+    create_if_exists hash, 'detail_url', name: :c_link
+    create_if_exists hash, 'url', name: :c_link
+    create_if_exists hash, 'short', name: :c_short
+    create_if_exists hash, 'objective', 'de', name: :c_short
+    create_if_exists hash, 'teachingContent', 'de', name: :c_teaching_content
+    create_if_exists hash, 'additionalInformation', 'de', name: :c_additional_information
+    create_if_exists hash, 'lectureNotes', 'de', name: :c_lecture_notes
+    create_if_exists hash, 'instituteName', 'de', name: :c_institute_name
+    create_if_exists hash, 'instituteCode', name: :c_institute_code
+
+  end
+
   def self.tiss_search_link
     "https://tiss.tuwien.ac.at/api/search/course/v1.0/quickSearch?searchterm="
   end

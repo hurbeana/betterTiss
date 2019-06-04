@@ -10,6 +10,7 @@ class Person < ApplicationRecord
       ill_reg = /\/illustration.*/
       hash['picture_uri'] = hash['picture_uri'].scan(ill_reg).first
     end
+    create_if_not_exists hash, 'adressbuch_visitenkarte', "/person/" + self.tiss_id, name: :p_link
     create_if_exists hash, 'adressbuch_visitenkarte', name: :p_link
     create_if_exists hash, 'adressbuch_benutzerbild', name: :p_image
     create_if_exists hash, 'picture_uri', name: :p_image

@@ -11,11 +11,28 @@ module MassAssignable
     end
   end
 
-  def create_if_exists(hash, key, name: key.to_sym)
-    return unless hash.key?(key)
+  def create_if_exists(hash, *args, name: key.to_sym)
+    exists = false
+    args.each do |key|
+      exists = false
+      break unless hash.is_a?(Hash)
+
+      exists = hash.key?(key)
+      break unless exists
+
+      hash = hash[key]
+    end
+    return unless exists
     return if respond_to?(name) && !send(name).nil?
 
     self.class.send(:attr_accessor, name)
-    send("#{name}=", hash[key])
+    send("#{name}=", hash)
+  end
+
+  def create_if_not_exists(hash, key, val, name: key.to_sym)
+    return if hash.key?(key)
+
+    self.class.send(:attr_accessor, name)
+    send("#{name}=", val)
   end
 end

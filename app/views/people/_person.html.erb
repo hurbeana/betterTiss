@@ -12,7 +12,9 @@
     <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p -->
 
   <% if person.respond_to?(:p_link) && !person.p_link.nil? %>
-    <p class="card-text">Link: <%= link_to "Tiss Link", tiss_link + person.p_link, :target => :_blank %> </p>
+    <p class="card-text">
+      Link: <%= link_to "Tiss Link", tiss_link + person.p_link, :target => :_blank %>
+    </p>
   <% end %>
 
   <div class="cardLinkCont">

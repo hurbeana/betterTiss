@@ -1,22 +1,50 @@
-<% provide(:title, @course.title['de']) %>
+<% provide(:title, @course.c_title) %>
 <div class="row">
 
   <aside class="col-md-4">
-    <section class="user_info">
+    <section class="course_detail">
 
-      <h1>Course Details </h1>
+      <h1>Course Details</h1>
 
-      <div class="card-header"><%= @course.title['de'] %></div>
-
-      <div class="card-body">
-        <p class="card-text"><%= raw @course.objective['de'] %></p>
-        <p class="card-text"><%= raw @course.teachingContent['de'] %></p>
-        <p class="card-text"><%= raw @course.additionalInformation['de'] %></p>
-        <p class="card-text"><%= raw @course.lectureNotes['de'] %></p>
-        <p class="card-text"><%= raw @course.examinationModalities['de'] %></p>
-        <p class="card-text"><%= raw @course.instituteName['de'] %></p>
-        <%= render 'shared/favorite', path: courses_favorite_path, favobj: @course %>
+      <div class="only_fav">
+        <%= render 'shared/favorite', path: courses_favorite_path, favobj: @course, class: "only_fav" %>
       </div>
+
+      <div class="card-header">
+        <h2>Title</h2>
+        <p><%= @course.c_title %></p>
+      </div>
+
+      <% if (@course.respond_to? :c_institute_name) && !@course.c_institute_name.nil? %>
+        <h2>Institution name</h2>
+        <p><%= @course.c_institute_name %></p>
+      <% end %>
+
+      <% if (@course.respond_to? :c_institute_code) && !@course.c_institute_code.nil? %>
+        <h2>Institution code</h2>
+        <p><%= @course.c_institute_code %></p>
+      <% end %>
+
+      <% if (@course.respond_to? :c_short) && !@course.c_short.nil? %>
+        <h2>Short</h2>
+        <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_short) %></p>
+      <% end %>
+
+      <% if (@course.respond_to? :c_teaching_content) && !@course.c_teaching_content.nil? %>
+        <h2>Teaching content</h2>
+        <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_teaching_content) %></p>
+      <% end %>
+
+
+      <% if (@course.respond_to? :c_additional_information) && !@course.c_additional_information.nil? %>
+        <h2>Additional information</h2>
+        <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_additional_information) %></p>
+      <% end %>
+
+      <% if (@course.respond_to? :c_lecture_notes) && !@course.c_lecture_notes.nil? %>
+        <h2>Lecture notes</h2>
+        <p><%= ActionView::Base.full_sanitizer.sanitize(@course.c_lecture_notes) %></p>
+      <% end %>
 
     </section>
   </aside>

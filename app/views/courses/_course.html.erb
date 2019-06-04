@@ -1,15 +1,24 @@
 <div class="card cardCoursesSize">
 
-  <div class="card-header">
-    <h2> Course: </h2>
-    <%= link_to course.title, courses_path(id: course.tiss_id) %>
+  <div class="card-header fade2Big">
+    <%= content_tag :h2, course.c_title if course.respond_to? :c_title %>
   </div>
 
-  <% if course.respond_to?(:detail_url) && !course.detail_url.nil? %>
-    <p class="card-text">Link: <%= link_to "Tiss", course.detail_url, :target => :_blank %></p>
+  <% if course.respond_to?(:c_link) && !course.c_link.nil? %>
+    <p class="card-text">
+      Link: <%= link_to "Tiss", course.c_link, :target => :_blank %>
+    </p>
   <% end %>
 
-  <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>
-  <%= link_to "Details", courses_path(id: course.tiss_id), class: "cardLinks" %>
+  <% if course.respond_to?(:c_short) && !course.c_short.nil? && !course.c_short.empty? %>
+    <div class="fade2">
+      <span style="font-weight: bold">Short: </span><%= ActionView::Base.full_sanitizer.sanitize(course.c_short) %>
+    </div>
+  <% end %>
+
+  <div class="cardLinkCont">
+    <%= render 'shared/favorite', path: courses_favorite_path, favobj: course %>
+    <%= link_to "Details", courses_path(id: course.tiss_id), class: "cardLinks" %>
+  </div>
 
 </div>

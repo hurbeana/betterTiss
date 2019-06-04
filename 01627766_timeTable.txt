@@ -92,7 +92,13 @@ improved user experience (links open in new tab)
 finished result card sizes
 theses and projects favorite works
 
+03.06.2019 - 3h
+working on further list/detail attribute naming
+added additional hash assignment function
+changes in css - card/fade
 
+04.06.2019 - ??h
+finished course details
 
 
 

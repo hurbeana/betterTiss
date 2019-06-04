@@ -34,7 +34,7 @@
           <%= content_tag :p, @person.firstname + " " + @person.lastname, class: "flexCont" %>
           <%= content_tag :p, @person.tiss_id.to_s, class: "flexCont" %>
           <%= content_tag :p, @person.gender, class: "flexCont" if @person.respond_to? :gender %>
-          <%= content_tag :p, @person&.prefixTitle, class: "flexCont" if @person.respond_to? :prefixTitle %>
+          <%= content_tag :p, @person.prefixTitle, class: "flexCont" if @person.respond_to? :prefixTitle %>
           <%= content_tag :p, @person.postfixTitle, class: "flexCont" if @person.respond_to? :postfixTitle %>
           <%= content_tag :p, @person.email, class: "flexCont" if @person.respond_to? :email %>
         </div>

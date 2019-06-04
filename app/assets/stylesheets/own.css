@@ -49,6 +49,7 @@ body {
 .main {
     text-align: center;
     flex: 1 0 auto;
+    padding: 0 10px 0 10px;
 }
 
 footer {
@@ -195,7 +196,7 @@ li.dropdown {
 
 .cardCoursesSize {
     width: 400px;
-    height: 140px;
+    height: 180px;
 }
 
 .cardProjectsSize {
@@ -246,6 +247,7 @@ li.dropdown {
 
 .cardLinks {
     margin: 20px;
+
 }
 
 .card-header {
@@ -259,7 +261,7 @@ li.dropdown {
 
 .fade3 {
     position: relative;
-    height: 5.6em; /* exactly three lines */
+    height: 5.6em; /* three lines */
 }
 
 .fade3:after {
@@ -273,9 +275,26 @@ li.dropdown {
     background: linear-gradient(to right, rgba(var(--red), var(--green), var(--blue), 0), rgba(var(--red), var(--green), var(--blue), 1) 50%);
 }
 
+.fade2Big {
+    position: relative;
+    height: 3.6em; /* two lines */
+}
+
+.fade2Big:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 1.8em;
+    background: linear-gradient(to right, rgba(var(--red), var(--green), var(--blue), 0), rgba(var(--red), var(--green), var(--blue), 1) 50%);
+}
+
 .fade2 {
     position: relative;
-    height: 2.4em; /* exactly three lines */
+    overflow: hidden;
+    height: 2.4em; /* two lines */
 }
 
 .fade2:after {
@@ -360,6 +379,24 @@ li.dropdown {
 .alert-notice {
     background: rgba(0, 85, 255, 0.42);
 }
+
+
+
+
+.course_detail h2 {
+    padding: 0;
+    margin: 0;
+}
+.course_detail p {
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
+.only_fav {
+    padding-bottom: 10px;
+}
+
+
 
 
 
