@@ -455,25 +455,32 @@ li.dropdown {
     list-style-type: none;
 }
 .li_user {
-    width: 280px;
-    text-align: start;
-    position: relative;
+    background: none;
+    width: 320px;
     margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
 }
 .li_user a {
-    color: #000;
-    position: absolute;
-    font-size: 1em;
+    background: none;
+    color: black;
 }
 .li_user a:hover {
     background: none;
     font-weight: bold;
-    font-size: 1.2em;
 }
-.delete_user {
-    bottom: 0;
+.user_index_name_delete {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 65px;
 }
-
+.user_index_name_delete a {
+    margin: 0;
+    padding: 0 0 10px 10px;
+    text-align: left;
+}
 
 
 .imgPerson {
