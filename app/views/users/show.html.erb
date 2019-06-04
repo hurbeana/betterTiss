@@ -1,14 +1,15 @@
 <% provide(:title, @user.name) %>
 <div class="row">
+
   <aside>
     <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+      <h1 class="header_name"><%= @user.name %></h1>
+      <%= gravatar_for @user %>
     </section>
   </aside>
+
   <div>
+    <h2>Favorites</h2>
 
     <button class="collapsible" onclick="openCollapsible(this)">Person favorites</button>
     <div class="content">   <!-- maybe class row -->
@@ -18,6 +19,7 @@
         <%= render @user.people %>
       <% end %>
     </div>
+
     <button class="collapsible" onclick="openCollapsible(this)">Course favorites</button>
     <div class="content">
       <% if @user.courses.empty? %>
@@ -26,6 +28,7 @@
         <%= render @user.courses %>
       <% end %>
     </div>
+
     <button class="collapsible" onclick="openCollapsible(this)">Project favorites</button>
     <div class="content">
       <% if @user.projects.empty? %>
@@ -34,6 +37,7 @@
         <%= render @user.projects %>
       <% end %>
     </div>
+
     <button class="collapsible" onclick="openCollapsible(this)">Theses favorites</button>
     <div class="content">
       <% if @user.theses.empty? %>
@@ -42,6 +46,6 @@
         <%= render @user.theses %>
       <% end %>
     </div>
-
   </div>
+
 </div>

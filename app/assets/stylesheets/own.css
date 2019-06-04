@@ -431,13 +431,43 @@ li.dropdown {
 }
 
 
+.header_name {
+    margin-bottom: 12px;
+}
+
+
+
+.ul_users {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: start;
+    list-style-type: none;
+}
+.li_user {
+    width: 300px;
+    text-align: start;
+    position: relative;
+    margin-bottom: 10px;
+}
+.li_user a {
+    color: #000;
+    position: absolute;
+    font-size: 1em;
+}
+.li_user a:hover {
+    background: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
 
 
 
 
 
 
-/* ##### MEDIA BREAKPOINTS ##### */
+
+
+    /* ##### MEDIA BREAKPOINTS ##### */
 
 :root {
     --test: 52px;
