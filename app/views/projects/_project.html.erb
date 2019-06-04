@@ -10,9 +10,9 @@
     </p>
   <% end %>
 
-  <% if project.respond_to?(:p_short) && !project.p_short.nil? && !project.p_short.empty? %>
+  <% if project.respond_to?(:p_short) && !project.p_short.nil? && !ActionView::Base.full_sanitizer.sanitize(project.p_short).empty? %>
     <div class="fade2">
-      <span style="font-weight: bold">Short: </span><%= project.p_short %>
+      <span style="font-weight: bold">Short: </span><%= ActionView::Base.full_sanitizer.sanitize(project.p_short) %>
     </div>
   <% end %>
 
