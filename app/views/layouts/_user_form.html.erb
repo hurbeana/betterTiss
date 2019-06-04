@@ -7,17 +7,17 @@
     <!-- for med, big screen sizes -->
     <div class="med big flexRow">
       <div class="flexCol">
-        <%= f.label :name, class: 'flexCont' %>
-        <%= f.label :email, class: 'flexCont' %>
-        <%= f.label :password, class: 'flexCont' %>
-        <%= f.label :password_confirmation, "Confirmation", class: 'flexCont' %>
+        <%= f.label :name, class: 'flexCont formLabel' %>
+        <%= f.label :email, class: 'flexCont formLabel' %>
+        <%= f.label :password, class: 'flexCont formLabel' %>
+        <%= f.label :password_confirmation, "Confirmation", class: 'flexCont formLabel' %>
       </div>
 
       <div class="flexCol">
-        <%= f.text_field :name, class: 'form-control, flexCont' %>
-        <%= f.email_field :email, class: 'form-control, flexCont' %>
-        <%= f.password_field :password, class: 'form-control, flexCont' %>
-        <%= f.password_field :password_confirmation, class: 'form-control, flexCont' %>
+        <%= f.text_field :name, class: 'form-control formTextField flexCont' %>
+        <%= f.email_field :email, class: 'form-control formTextField flexCont' %>
+        <%= f.password_field :password, class: 'form-control formTextField flexCont' %>
+        <%= f.password_field :password_confirmation, class: 'form-control formTextField flexCont' %>
       </div>
     </div>
 

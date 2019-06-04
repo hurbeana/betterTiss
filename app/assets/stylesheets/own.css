@@ -67,7 +67,12 @@ footer div p {
 
 /* ##### main part ##### */
 .mySubmit {
-    background-color: #BBBBBB;
+    /*background-color: #BBBBBB;*/
+    background: linear-gradient(to right, #BBBBBB 34%, darkslategray 65%);
+    background-size: 300% 100%;
+    background-position: left bottom;
+    transition: all 0.5s ease;
+
     color: black;
     font-weight: bold;
     text-decoration: none;
@@ -79,11 +84,12 @@ footer div p {
 }
 
 .mySubmit:hover {
-    background-color: darkslategray;
+    /*background-color: darkslategray;*/
+    background-position: right bottom;
+    transition: all 0.5s ease;
+
+    cursor: pointer;
     color: white;
-    min-width: 220px;
-    padding: 0.7em 0 0.7em 0;
-    margin: 0.8em;
 }
 
 
@@ -101,6 +107,9 @@ li {
 }
 
 li a, .dropbtn {
+    background-color: darkslategray;
+    transition: background-color 500ms ease;
+
     display: inline-block;
     color: white;
     text-align: center;
@@ -109,6 +118,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
+    transition: background-color 500ms ease;
     background-color: cornflowerblue;
 }
 
@@ -126,7 +136,7 @@ li.dropdown {
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -134,7 +144,7 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-    background-color: lightgrey;
+
 }
 
 .dropdown:hover .dropdown-content {
@@ -315,6 +325,9 @@ li.dropdown {
 .formTextField {
     font-size: 1em;
     background-color: #F7F7F7;
+}
+.formLabel {
+    padding: 4px;
 }
 
 

@@ -12,7 +12,7 @@
     <h2>Favorites</h2>
 
     <button class="collapsible" onclick="openCollapsible(this)">Person favorites</button>
-    <div class="content">   <!-- maybe class row -->
+    <div class="content">
       <% if @user.people.empty? %>
         <p>No favorites found.</p>
       <% else %>
