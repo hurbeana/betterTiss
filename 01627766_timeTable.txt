@@ -46,7 +46,7 @@ worked on responsive ui changes.
 added collapsible containers in profile page for favorites.
 worked on search page - search result list.
 restructured content of result list elements (cards) and detail view of element.
-01.05.2019 - 1.5h
+01.05.2019 - 2h
 bugfixes and cleanup for intermediate handin
 
 06.05.2019 - 2h
@@ -103,8 +103,4 @@ changed users page layout (view all users)
 testing and debugging (+cleanup)
 last improvements to mobile adaptiveness
 
-
-
-
-
-atm ~ 55.5h
+total - 64h
