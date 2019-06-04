@@ -97,8 +97,10 @@ working on further list/detail attribute naming
 added additional hash assignment function
 changes in css - card/fade
 
-04.06.2019 - ??h
-finished course details
+04.06.2019 - 3h
+finished course details, project details, thesis details
+testing and debugging (+cleanup)
+
 
 
 

@@ -388,11 +388,11 @@ li.dropdown {
 
 
 
-.course_detail h2, .project_detail h2 {
+.course_detail h2, .project_detail h2, .thesis_detail h2 {
     padding: 0;
     margin: 0;
 }
-.course_detail p, .project_detail p {
+.course_detail p, .project_detail p, .thesis_detail p {
     padding: 0 0 20px 0;
     margin: 0;
 }

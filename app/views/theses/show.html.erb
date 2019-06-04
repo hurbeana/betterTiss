@@ -1,1 +1,136 @@
-<% provide(:title, @thesis.title['de']) %>
+<% provide(:title, @thesis.t_title) %>
+<div class="row">
+
+  <aside class="col-md-4">
+    <section class="thesis_detail">
+
+      <h1>Thesis Details</h1>
+
+      <div class="only_fav">
+        <%= render 'shared/favorite', path: projects_favorite_path, favobj: @thesis, class: "only_fav" %>
+      </div>
+
+      <div class="card-header">
+        <h2>Title</h2>
+        <p><%= @thesis.t_title %></p>
+      </div>
+
+      <% if (@thesis.respond_to? :t_short) && !@thesis.t_short.nil? && !@thesis.t_short.empty? %>
+        <h2>Short</h2>
+        <%= content_tag :p, @thesis.t_short %>
+      <% end %>
+
+      <% if (@thesis.respond_to? :t_thesis_type) && !@thesis.t_thesis_type.nil? && !@thesis.t_thesis_type.empty? %>
+        <h2>Thesis type</h2>
+        <%= content_tag :p, @thesis.t_thesis_type %>
+      <% end %>
+
+      <div class="flexRowProject">
+        <div class="flexColProjectL">
+          <% if @thesis.respond_to? :t_institute_name %>
+            <h3>Institute name:</h3>
+          <% end %>
+          <% if @thesis.respond_to? :t_institute_code %>
+            <h3>Institute code:</h3>
+          <% end %>
+          <% if @thesis.respond_to? :t_faculty_name %>
+            <h3>Faculty name:</h3>
+          <% end %>
+          <% if @thesis.respond_to? :t_faculty_code %>
+            <h3>Faculty code:</h3>
+          <% end %>
+        </div>
+
+        <div class="flexColProjectR">
+          <% if @thesis.respond_to? :t_institute_name %>
+            <%= content_tag :p, @thesis.t_institute_name %>
+          <% end %>
+          <% if @thesis.respond_to? :t_institute_code %>
+            <%= content_tag :p, @thesis.t_institute_code %>
+          <% end %>
+          <% if @thesis.respond_to? :t_faculty_name %>
+            <%= content_tag :p, @thesis.t_faculty_name %>
+          <% end %>
+          <% if @thesis.respond_to? :t_faculty_code %>
+            <%= content_tag :p, @thesis.t_faculty_code %>
+          <% end %>
+        </div>
+      </div>
+
+      <% if @thesis.respond_to? :t_advisor_oid %>
+        <h2>Advisor</h2>
+        <div class="flexRowProject">
+          <div class="flexColProjectL">
+            <h3>Oid:</h3>
+            <% if @thesis.respond_to? :t_advisor_family_name %>
+              <h3>Family name:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_given_name %>
+              <h3>Given name:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_prefix_title %>
+              <h3>Prefix title:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_postfix_title %>
+              <h3>Postfix title:</h3>
+            <% end %>
+          </div>
+
+          <div class="flexColProjectR">
+            <%= content_tag :p, @thesis.t_advisor_oid %>
+            <% if @thesis.respond_to? :t_advisor_family_name %>
+              <%= content_tag :p, @thesis.t_advisor_family_name %>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_given_name %>
+              <%= content_tag :p, @thesis.t_advisor_given_name %>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_prefix_title %>
+              <%= content_tag :p, @thesis.t_advisor_prefix_title %>
+            <% end %>
+            <% if @thesis.respond_to? :t_advisor_postfix_title %>
+              <%= content_tag :p, @thesis.t_advisor_postfix_title %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @thesis.respond_to? :t_assistant_oid %>
+        <h2>Assistant</h2>
+        <div class="flexRowProject">
+          <div class="flexColProjectL">
+            <h3>Oid:</h3>
+            <% if @thesis.respond_to? :t_assistant_family_name %>
+              <h3>Family name:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_given_name %>
+              <h3>Given name:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_prefix_title %>
+              <h3>Prefix title:</h3>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_postfix_title %>
+              <h3>Postfix title:</h3>
+            <% end %>
+          </div>
+
+          <div class="flexColProjectR">
+            <%= content_tag :p, @thesis.t_assistant_oid %>
+            <% if @thesis.respond_to? :t_assistant_family_name %>
+              <%= content_tag :p, @thesis.t_assistant_family_name %>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_given_name %>
+              <%= content_tag :p, @thesis.t_assistant_given_name %>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_prefix_title %>
+              <%= content_tag :p, @thesis.t_assistant_prefix_title %>
+            <% end %>
+            <% if @thesis.respond_to? :t_assistant_postfix_title %>
+              <%= content_tag :p, @thesis.t_assistant_postfix_title %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </section>
+  </aside>
+</div>
