@@ -457,6 +457,9 @@ li.dropdown {
     font-weight: bold;
     font-size: 1.2em;
 }
+.delete_user {
+    bottom: 0;
+}
 
 
 
@@ -481,7 +484,7 @@ li.dropdown {
 }
 
 /* default - big screen size */
-@media screen and (min-width: 843px) {
+@media screen and (min-width: 1024px) {
     li.sml, .sml {
         display: none;
     }
@@ -514,7 +517,7 @@ li.dropdown {
 }
 
 /* medium screen size */
-@media screen and (min-width: 444px) and (max-width: 842px) {
+@media screen and (min-width: 444px) and (max-width: 1023px) {
 
     li.big, .big {
         display: none;
@@ -623,6 +626,15 @@ li.dropdown {
         flex-direction: column;
         margin: 0 10px 10px 10px;
     }
+    .field_with_errors {
+        display: flex;
+        flex-direction: column;
+    }
+    .field_with_errors .formTextField {
+        -webkit-box-shadow: 0 0 5px 2px rgba(255,0,0,1);
+        -moz-box-shadow: 0 0 5px 2px rgba(255,0,0,1);
+        box-shadow: 0 0 5px 2px rgba(255,0,0,1);
+    }
 
     .formTextField {
         font-size: 1.2em;
@@ -670,5 +682,9 @@ li.dropdown {
 
     .cardPeopleSize, .cardCoursesSize, .cardProjectsSize, .cardThesesSize {
         width: 90%;
+    }
+
+    .alert {
+        margin: 5px 5% 5px 5%;
     }
 }

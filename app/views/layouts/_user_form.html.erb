@@ -1,44 +1,56 @@
 <% post_path = nil if post_path.nil? %>
-<%= form_for(@user, url: post_path) do |f| %>
-  <%= render 'shared/error_messages' %>
 
-  <!-- for med, big screen sizes -->
-  <div class="med big flexRow">
-    <div class="flexCol">
-      <%= f.label :name, class: 'flexCont' %>
-      <%= f.label :email, class: 'flexCont' %>
-      <%= f.label :password, class: 'flexCont' %>
-      <%= f.label :password_confirmation, "Confirmation", class: 'flexCont' %>
+<div class="med big">
+  <%= form_for(@user, url: post_path) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <!-- for med, big screen sizes -->
+    <div class="med big flexRow">
+      <div class="flexCol">
+        <%= f.label :name, class: 'flexCont' %>
+        <%= f.label :email, class: 'flexCont' %>
+        <%= f.label :password, class: 'flexCont' %>
+        <%= f.label :password_confirmation, "Confirmation", class: 'flexCont' %>
+      </div>
+
+      <div class="flexCol">
+        <%= f.text_field :name, class: 'form-control, flexCont' %>
+        <%= f.email_field :email, class: 'form-control, flexCont' %>
+        <%= f.password_field :password, class: 'form-control, flexCont' %>
+        <%= f.password_field :password_confirmation, class: 'form-control, flexCont' %>
+      </div>
     </div>
 
-    <div class="flexCol">
-      <%= f.text_field :name, class: 'form-control, flexCont' %>
-      <%= f.email_field :email, class: 'form-control, flexCont' %>
-      <%= f.password_field :password, class: 'form-control, flexCont' %>
-      <%= f.password_field :password_confirmation, class: 'form-control, flexCont' %>
-    </div>
-  </div>
+    <%= f.submit yield(:button_text), class: "btn btn-primary mySubmit" %>
 
-  <!-- for sml screen sizes -->
-  <div class="sml">
-    <div class="smlLoginContainer">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control formTextField' %>
-    </div>
-    <div class="smlLoginContainer">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control formTextField' %>
-    </div>
-    <div class="smlLoginContainer">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control formTextField' %>
-    </div>
-    <div class="smlLoginContainer">
-      <%= f.label :password %>
-      <%= f.password_field :password_confirmation, class: 'form-control formTextField' %>
-    </div>
-  </div>
+  <% end %>
+</div>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary mySubmit" %>
+<div class="sml">
+  <%= form_for(@user, url: post_path) do |f| %>
+    <%= render 'shared/error_messages' %>
 
-<% end %>
+    <!-- for sml screen sizes -->
+    <div class="sml">
+      <div class="smlLoginContainer">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control formTextField' %>
+      </div>
+      <div class="smlLoginContainer">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control formTextField' %>
+      </div>
+      <div class="smlLoginContainer">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control formTextField' %>
+      </div>
+      <div class="smlLoginContainer">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control formTextField' %>
+      </div>
+    </div>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary mySubmit" %>
+
+  <% end %>
+</div>
