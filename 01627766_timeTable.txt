@@ -108,4 +108,4 @@ added favorite/unfavorite icon
 fixed short of project in detail (in collapsible)
 bug search - title not displayed of one thesis
 
-total - 64h
+total - 66h
