@@ -251,7 +251,10 @@ li.dropdown {
 */
 
 .cardLinkCont {
-    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
 }
 .cardLinks {
     margin: 20px;
@@ -487,6 +490,14 @@ li.dropdown {
     height: auto;
     max-width: 80%;
     padding: 0 0 10px 0;
+}
+
+.favIcon {
+    height: 24px;
+    width: 24px;
+}
+#favTextWithIcon {
+    margin-left: 0;
 }
 
 

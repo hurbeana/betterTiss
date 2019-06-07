@@ -2,6 +2,7 @@
   <% if favorite?(favobj) %>
     <%= link_to "Unfavorite", "#{path}?tiss_id=#{favobj.tiss_id}&type=unfavorite", method: :put, class: "cardLinks" %>
   <% else %>
-    <%= link_to "Favorite", "#{path}?tiss_id=#{favobj.tiss_id}&type=favorite", method: :put, class: "cardLinks" %>
+    <%= image_tag "favorite_icon.png", class: "favIcon" %>
+    <%= link_to "Favorite", "#{path}?tiss_id=#{favobj.tiss_id}&type=favorite", method: :put, class: "cardLinks", id: "favTextWithIcon" %>
   <% end %>
 <% end %>
