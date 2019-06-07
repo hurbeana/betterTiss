@@ -9,7 +9,8 @@ class Thesis < ApplicationRecord
   def assign_hash(hash)
     super hash
     create_if_exists hash, 'title', 'de', name: :t_title
-    create_if_exists hash, 'title', name: :t_title if hash.key?('t_title')
+    create_if_exists hash, 'title', 'en', name: :t_title unless hash.key?('t_title')
+    create_if_exists hash, 'title', name: :t_title unless hash.key?('t_title')
 
     create_if_exists hash, 'short', name: :t_short
     create_if_exists hash, 'keywords', 'de', name: :t_short
