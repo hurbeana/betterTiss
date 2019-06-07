@@ -32,7 +32,7 @@
     flex-flow: wrap;
     justify-content: center;
 
-    padding: 5px;
+    margin: 5px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

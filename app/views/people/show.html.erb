@@ -7,40 +7,40 @@
 
       <%= image_tag tiss_link + @person.p_image, class: "imgPerson" if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
 
-      <div class="only_fav">
+      <div class="only_fav cardLinkCont">
         <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
       </div>
 
-      <div class="flexRowPerson">
-        <div class="flexColPersonL">
+      <div class="flexRowProject">
+        <div class="flexColProjectL">
 
-          <p class="flexCont">Name: </p>
-          <p class="flexCont">Tiss id: </p>
+          <h3 class="flexCont">Name: </h3>
+          <h3 class="flexCont">Tiss id: </h3>
 
           <% if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
-            <%= content_tag :p, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
+            <%= content_tag :h3, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
           <% end %>
 
-          <% if @person.respond_to? :prefixTitle %>
-            <%= content_tag :p, "Prefix Titles: ", class: "flexCont" %>
+          <% if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
+            <%= content_tag :h3, "Prefix Titles: ", class: "flexCont" %>
           <% end %>
 
-          <% if @person.respond_to? :postfixTitle %>
-            <%= content_tag :p, "Postfix Titles: ", class: "flexCont" %>
+          <% if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
+            <%= content_tag :h3, "Postfix Titles: ", class: "flexCont" %>
           <% end %>
 
-          <% if @person.respond_to? :email %>
-            <%= content_tag :p, "eMail: ", class: "flexCont" if @person.respond_to? :email %>
+          <% if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
+            <%= content_tag :h3, "eMail: ", class: "flexCont" %>
           <% end %>
         </div>
 
-        <div class="flexColPersonR">
+        <div class="flexColProjectR">
           <%= content_tag :p, @person.firstname + " " + @person.lastname, class: "flexCont" %>
           <%= content_tag :p, @person.tiss_id.to_s, class: "flexCont" %>
           <%= content_tag :p, @person.gender, class: "flexCont" if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
-          <%= content_tag :p, @person.prefixTitle, class: "flexCont" if @person.respond_to? :prefixTitle %>
-          <%= content_tag :p, @person.postfixTitle, class: "flexCont" if @person.respond_to? :postfixTitle %>
-          <%= content_tag :p, @person.email, class: "flexCont" if @person.respond_to? :email %>
+          <%= content_tag :p, @person.prefixTitle, class: "flexCont" if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
+          <%= content_tag :p, @person.postfixTitle, class: "flexCont" if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
+          <%= content_tag :p, @person.email, class: "flexCont" if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
         </div>
       </div>
 

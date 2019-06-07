@@ -6,7 +6,7 @@
 
       <h1>Project Details</h1>
 
-      <div class="only_fav">
+      <div class="only_fav cardLinkCont">
         <%= render 'shared/favorite', path: projects_favorite_path, favobj: @project, class: "only_fav" %>
       </div>
 
@@ -15,10 +15,14 @@
         <p><%= @project.p_title %></p>
       </div>
 
-      <% if (@project.respond_to? :p_short) && !@project.p_short.nil? && !@project.p_short.empty? %>
-        <h2>Short</h2>
-        <%= content_tag :p, @project.p_short %>
-      <% end %>
+      <button class="collapsible" onclick="openCollapsible(this)">Short</button>
+      <div class="content">
+        <% if (@project.respond_to? :p_short) && !@project.p_short.nil? && !@project.p_short.empty? %>
+          <%= content_tag :p, ActionView::Base.full_sanitizer.sanitize(@project.p_short) %>
+        <% else %>
+          <p>No short information found.</p>
+        <% end %>
+      </div>
 
       <div class="flexRowProject">
         <div class="flexColProjectL">

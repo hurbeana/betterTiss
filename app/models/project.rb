@@ -9,7 +9,7 @@ class Project < ApplicationRecord
     create_if_exists hash, 'title', name: :p_title
     create_if_exists hash, 'titleDe', name: :p_title
     create_if_exists hash, 'short', name: :p_short
-    create_if_exists hash, 'keywords', 'keyword', 'de', name: :p_short
+    create_if_exists hash, 'abstractDe', name: :p_short
     create_if_exists hash, 'researchAreas', 'researchArea', 'name', 'de', name: :p_research_area
     create_if_exists hash, 'financiers', 'financier', 'de', name: :p_financier
     create_if_not_exists hash, 'detail_url', 'https://tiss.tuwien.ac.at/fpl/project/index.xhtml?id=' + tiss_id, name: :detail_url
