@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 
 gem 'rdoc'
+gem 'yard'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

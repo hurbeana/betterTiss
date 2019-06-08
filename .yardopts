@@ -1,0 +1,7 @@
+--title "BetterTiss Documentation"
+--main README.md
+app/controllers/**/*.rb
+app/models/**/*.rb
+app/helpers/**/*.rb -
+01625747_timesheet.txt
+01627766_timesheet.txt

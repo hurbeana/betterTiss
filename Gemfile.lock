@@ -223,6 +223,7 @@ GEM
     win32console (1.3.2)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yard (0.9.19)
 
 PLATFORMS
   x64-mingw32
@@ -256,6 +257,7 @@ DEPENDENCIES
   webdriver
   will_paginate
   win32console
+  yard
 
 RUBY VERSION
    ruby 2.6.1p33
