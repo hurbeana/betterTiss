@@ -1,0 +1,125 @@
+== Welcome to BetterTiss
+
+BetterTiss is a proxy for the website hosted by the technical university of 
+vienna (TU Wien). With this web application you can query following objects
+of the TISS (TISS - Information Systems and Services of the TU Wien):
+
+* People
+* Courses
+* Projects
+* Theses
+
+You can login or create a new account to be able to favorite the different 
+objects of the four categories. A user of the service doesn't need to be 
+logged in to use the searches, but cannot favorite objects.
+
+A user, once logged in, can view other users favorites, favorite, and edit 
+his/her own profile. To edit the user profile image, a gravatar account is 
+needed (https://de.gravatar.com/).
+
+== Team
+
+This project was made for the LVA 188.519 (UE 2019S) for the TU Wien by
+Hurbean Alexander (e1625747) and Bernhard Ploder (e1627766)
+
+== Dependencies
+
+For production following dependencies are needed (from Gemfile):
+
+* ruby 2.6.1
+* rails 5.2.2
+* sqlite
+* puma
+* sass-rails
+* uglifier
+* duktape
+* coffee-rails 
+* turbolinks
+* jbuilder
+* bcrypt
+* faker
+* httparty
+* jquery-rails
+* will_paginate
+* rdoc
+* bootsnap
+* tzinfo-data
+
+For development additional dependencies are needed:
+
+* web-console
+
+For test additional dependencies are needed:
+
+* capybara
+* selenium-webdriver
+* minitest-reporters
+* rails-controller-testing
+* webdriver
+* win32console
+
+For development and test additional dependencies are needed:
+
+* byebug
+* spring
+* better_errors
+* binding_of_caller
+
+== Commands
+
+=== Setup
+
+Before starting for the first time make sure you have all the needed gems 
+installed by running <tt>bundle install</tt> or just <tt>bundle</tt> once.
+
+Next (if everything succeeded) migrate the database with the command
+  
+  rake db:migrate
+
+To fill the database with dummy data run <tt>rake db:seed</tt> (optional)
+
+=== Testing
+
+To test the application run <tt>rake test</tt> or just <tt>rake t</tt>
+
+=== Running
+
+To run the server on localhost run
+
+  rails s
+
+there are additional arguments such as 
+
+* <tt>--binding</tt> with preferably <tt>0.0.0.0</tt> to open the server to the outside
+* <tt>--port</tt> with preferably <tt>80</tt> to respond to all incoming http requests
+
+so to run the server to the outside world run following command
+
+  rails s --binding 0.0.0.0 --port 80
+
+== Structure 
+
+  ├───app
+  │   ├───assets
+  │   ├───controllers
+  │   │   └───concerns
+  │   ├───helpers
+  │   ├───models
+  │   │   └───concerns
+  │   └───views
+  │       ├───courses
+  │       ├───layouts
+  │       ├───people
+  │       ├───projects
+  │       ├───sessions
+  │       ├───shared
+  │       ├───theses
+  │       └───users
+  ├───db
+  │   ├───migrate
+  │   └───seeds.rb
+  └───test
+
+The project has a standard rails folder structure with each folder containing 
+the usual files such as views, models and controllers. As we make use of concerns 
+for abstractions, the folders also contain files.
