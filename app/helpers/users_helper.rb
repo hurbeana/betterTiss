@@ -1,3 +1,6 @@
+##
+# Helper for users.
+# Provides functions needed for additional user information.
 module UsersHelper
   # Returns the Gravatar for the given user.
   def gravatar_for(user, size: 128)
