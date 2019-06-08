@@ -150,6 +150,15 @@ one of these elements once.
 All of the data is being loaded from TISS via REST requests every time a user
 requests an object (via search or detail view).
 
+The way the system works is, that the search is generically being provided by
+each model with the Searchable module. Once a user enters a search, a request is
+begin sent to the correct TISS REST Url which returns a JSON or XML. The system
+parses the reponse and maps all of the attributes to the objects which then can
+be displayed.
+
+Once a user favorites one object, its tiss_id is remembered in the database and
+saved in a relationship with the user.
+
 === Concerns
 
 ==== Favoritable
@@ -158,7 +167,7 @@ Including the Favoritable module in a ApplicationController makes the controller
 support the favoritable path for its objects. All that is needed is the route
 that needs to be configured (see routes.rb for examples).
 
-==== Mass Assignable
+==== MassAssignable
 
 This ActiveSupport::Concern Module adds functions to easily create new
 attr_accessor dynamically for a object (or in our case models). This plays well
@@ -179,7 +188,7 @@ assigns it to the model object.
 
 ==== Searchable
 
-A model that is Searchable needs to supply a tiss_search_link, and a way to extract
-the tiss_id from any possible given hash. With that information a new
+A model that is Searchable needs to supply a tiss_search_link, and a way to
+extract the tiss_id from any possible given hash. With that information a new
 ClassMethod is begin added to the models class which allows a user to search
 TISS for objects of the given Class.
