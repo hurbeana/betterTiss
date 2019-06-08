@@ -1,3 +1,5 @@
+##
+# The main class of the system.
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     include SessionsHelper
