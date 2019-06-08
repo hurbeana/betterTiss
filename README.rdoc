@@ -154,7 +154,7 @@ requests an object (via search or detail view).
 
 ==== Favoritable
 
-Including the Favoritable module in a ApplicationController makes the contrller
+Including the Favoritable module in a ApplicationController makes the controller
 support the favoritable path for its objects. All that is needed is the route
 that needs to be configured (see routes.rb for examples).
 
@@ -164,3 +164,22 @@ This ActiveSupport::Concern Module adds functions to easily create new
 attr_accessor dynamically for a object (or in our case models). This plays well
 with the hash that is supplied by loading information via rest, which can be
 assigned to the object so that access with the "." operator is possible.
+
+==== RESTObject
+
+Is a Mass Assignable, as stated before, works well together for mass assigning
+all values received. RESTObject overwrites the assign_hash by setting the
+tiss_id inside the hash so that that value is always available for all objects
+automatically.
+
+A model that is a RESTObject always ensures it has all of the needed information
+loaded from the TISS Server, and if not, loads it (via tiss_id) and massively
+assigns it to the model object.
+
+
+==== Searchable
+
+A model that is Searchable needs to supply a tiss_search_link, and a way to extract
+the tiss_id from any possible given hash. With that information a new
+ClassMethod is begin added to the models class which allows a user to search
+TISS for objects of the given Class.
