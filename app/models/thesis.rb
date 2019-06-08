@@ -8,7 +8,7 @@ class Thesis < ApplicationRecord
   include Searchable
   include RESTObject
 
-  THESIS_ID_REG = /\d{5}/
+  THESIS_ID_REG = /\d{5}/ # filter for the thesis id out a url
 
   ##
   # Database relation

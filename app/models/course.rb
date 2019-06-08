@@ -8,8 +8,9 @@ class Course < ApplicationRecord
   include Searchable
   include RESTObject
 
-  COURSE_NR_REG = /[\dA-Z]{6}/
-  SEMESTER_REG = /\d{4}[SW]/
+  
+  COURSE_NR_REG = /[\dA-Z]{6}/ # filter for the coursenumber out of a url
+  SEMESTER_REG = /\d{4}[SW]/ # filter for the semester number out of a url
 
   ##
   # Database relation
