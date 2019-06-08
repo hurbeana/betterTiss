@@ -108,4 +108,10 @@ added favorite/unfavorite icon
 fixed short of project in detail (in collapsible)
 bug search - title not displayed of one thesis
 
-total - 66h
+08.06.2019 - 1h
+last improvements
+merge dev into master branch
+preparing for handin
+
+
+total - 67h

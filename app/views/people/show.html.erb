@@ -5,43 +5,51 @@
 
       <h1 class="header_name">Person Details</h1>
 
-      <%= image_tag tiss_link + @person.p_image, class: "imgPerson" if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
+      <div class="flexRowPerson">
 
-      <div class="only_fav cardLinkCont">
-        <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
-      </div>
+        <%= image_tag tiss_link + @person.p_image, class: "imgPerson" if @person.respond_to?(:p_image) && !@person.p_image.nil? %>
 
-      <div class="flexRowProject">
-        <div class="flexColProjectL">
+        <div class="flexColPersonFav">
 
-          <h3 class="flexCont">Name: </h3>
-          <h3 class="flexCont">Tiss id: </h3>
+          <div class="only_fav cardLinkCont">
+            <%= render 'shared/favorite', path: people_favorite_path, favobj: @person %>
+          </div>
 
-          <% if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
-            <%= content_tag :h3, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
-          <% end %>
+          <div class="flexRowProject">
+            <div class="flexColProjectL">
 
-          <% if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
-            <%= content_tag :h3, "Prefix Titles: ", class: "flexCont" %>
-          <% end %>
+              <h3 class="flexCont">Name: </h3>
+              <h3 class="flexCont">Tiss id: </h3>
 
-          <% if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
-            <%= content_tag :h3, "Postfix Titles: ", class: "flexCont" %>
-          <% end %>
+              <% if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
+                <%= content_tag :h3, "Gender: ", class: "flexCont" if @person.respond_to? :gender %>
+              <% end %>
 
-          <% if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
-            <%= content_tag :h3, "eMail: ", class: "flexCont" %>
-          <% end %>
+              <% if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
+                <%= content_tag :h3, "Prefix Titles: ", class: "flexCont" %>
+              <% end %>
+
+              <% if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
+                <%= content_tag :h3, "Postfix Titles: ", class: "flexCont" %>
+              <% end %>
+
+              <% if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
+                <%= content_tag :h3, "eMail: ", class: "flexCont" %>
+              <% end %>
+            </div>
+
+            <div class="flexColProjectR">
+              <%= content_tag :p, @person.firstname + " " + @person.lastname, class: "flexCont" %>
+              <%= content_tag :p, @person.tiss_id.to_s, class: "flexCont" %>
+              <%= content_tag :p, @person.gender, class: "flexCont" if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
+              <%= content_tag :p, @person.prefixTitle, class: "flexCont" if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
+              <%= content_tag :p, @person.postfixTitle, class: "flexCont" if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
+              <%= content_tag :p, @person.email, class: "flexCont" if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
+            </div>
+          </div>
+
         </div>
 
-        <div class="flexColProjectR">
-          <%= content_tag :p, @person.firstname + " " + @person.lastname, class: "flexCont" %>
-          <%= content_tag :p, @person.tiss_id.to_s, class: "flexCont" %>
-          <%= content_tag :p, @person.gender, class: "flexCont" if (@person.respond_to? :gender) && !@person.gender.nil? && !@person.gender.empty? %>
-          <%= content_tag :p, @person.prefixTitle, class: "flexCont" if (@person.respond_to? :prefixTitle) && !@person.prefixTitle.nil? && !@person.prefixTitle.empty? %>
-          <%= content_tag :p, @person.postfixTitle, class: "flexCont" if (@person.respond_to? :postfixTitle) && !@person.postfixTitle.nil? && !@person.postfixTitle.empty? %>
-          <%= content_tag :p, @person.email, class: "flexCont" if (@person.respond_to? :email) && !@person.email.nil? && !@person.email.empty? %>
-        </div>
       </div>
 
     </section>

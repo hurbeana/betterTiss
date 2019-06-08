@@ -485,13 +485,6 @@ li.dropdown {
     text-align: left;
 }
 
-
-.imgPerson {
-    height: auto;
-    max-width: 80%;
-    padding: 0 0 10px 0;
-}
-
 .favIcon {
     height: 24px;
     width: 24px;
@@ -545,6 +538,19 @@ li.dropdown {
         flex-direction: column;
         align-items: flex-end;
     }
+
+    .flexRowPerson {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 35px;
+    }
+    .flexColPersonFav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* medium screen size */
@@ -578,6 +584,19 @@ li.dropdown {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+    }
+
+    .flexRowPerson {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 35px;
+    }
+    .flexColPersonR {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -719,5 +738,15 @@ li.dropdown {
 
     .alert {
         margin: 5px 5% 5px 5%;
+    }
+
+    .flexRowPerson {
+        flex-direction: column;
+    }
+    .flexColPersonR {}
+    .imgPerson {
+        height: auto;
+        max-width: 80%;
+        padding: 0 0 10px 0;
     }
 }
