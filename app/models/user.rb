@@ -1,3 +1,5 @@
+##
+# This class represents a user of this system and it's attributes and relations.
 class User < ApplicationRecord
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50 }
@@ -9,6 +11,9 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   attr_accessor :remember_token
 
+  ##
+  # Database relations
+  # Needed so that this user can have people, courses, projects, and theses as favorites.
   has_and_belongs_to_many :people
   has_and_belongs_to_many :courses
   has_and_belongs_to_many :projects
