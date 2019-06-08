@@ -29,12 +29,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
 
-gem 'bootstrap-sass'
-gem 'bootstrap-will_paginate', '1.0.0'
 gem 'faker', '1.7.3'
 gem 'httparty'
 gem 'jquery-rails'
 gem 'will_paginate'
+
+gem 'rdoc'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
