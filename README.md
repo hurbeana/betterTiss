@@ -1,6 +1,6 @@
 # README
 
-*Team
+* Team
   * Hurbean Alexander - 01625747
   * Ploder Bernhard - 01627766
 
