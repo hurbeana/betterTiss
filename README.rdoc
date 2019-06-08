@@ -1,20 +1,20 @@
 == Welcome to BetterTiss
 
-BetterTiss is a proxy for the website hosted by the technical university of 
-vienna (TU Wien). With this web application you can query following objects
-of the TISS (TISS - Information Systems and Services of the TU Wien):
+BetterTiss is a proxy for the website hosted by the technical university of
+vienna (TU Wien). With this web application you can query following objects of
+the TISS (TISS - Information Systems and Services of the TU Wien):
 
 * People
 * Courses
 * Projects
 * Theses
 
-You can login or create a new account to be able to favorite the different 
-objects of the four categories. A user of the service doesn't need to be 
-logged in to use the searches, but cannot favorite objects.
+You can login or create a new account to be able to favorite the different
+objects of the four categories. A user of the service doesn't need to be logged
+in to use the searches, but cannot favorite objects.
 
-A user, once logged in, can view other users favorites, favorite, and edit 
-his/her own profile. To edit the user profile image, a gravatar account is 
+A user, once logged in, can view other users favorites, favorite, and edit
+his/her own profile. To edit the user profile image, a gravatar account is
 needed (https://de.gravatar.com/).
 
 == Team
@@ -90,8 +90,10 @@ To run the server on localhost run
 
 there are additional arguments such as 
 
-* <tt>--binding</tt> with preferably <tt>0.0.0.0</tt> to open the server to the outside
-* <tt>--port</tt> with preferably <tt>80</tt> to respond to all incoming http requests
+* <tt>--binding</tt> with preferably <tt>0.0.0.0</tt> to open the server to the
+outside
+* <tt>--port</tt> with preferably <tt>80</tt> to respond to all incoming
+http requests
 
 so to run the server to the outside world run following command
 
@@ -119,7 +121,46 @@ so to run the server to the outside world run following command
   │   ├───migrate
   │   └───seeds.rb
   └───test
+The project has a standard rails folder structure with each folder conta inin g
+the usual files such as views, models and controllers. As we make use of
+concerns for abstractions, the folders also contain files.
 
-The project has a standard rails folder structure with each folder containing 
-the usual files such as views, models and controllers. As we make use of concerns 
-for abstractions, the folders also contain files.
+== Architecture
+
+=== Users
+
+The users and their sessions have their own views, controllers, and models. We
+use bcrypt for authentication and password digest storing. Vari ous user helper
+function have been written to the users_helper.rb file to ease the interaction
+with the user.
+
+For creating, destroying and storing of user sessions we have a controller that
+manages the users session and is user for logging in, logging out and
+remembering.
+
+The user model has relationships to the other four models to be able to favorite
+each of them.
+
+=== People, Projects, Courses, Theses
+
+These can be queried (via search or detail) from TISS and their TISS ID with
+which one is identified will be stored in our database if an user has favorited
+one of these elements once.
+
+All of the data is being loaded from TISS via REST requests every time a user
+requests an object (via search or detail view).
+
+=== Concerns
+
+==== Favoritable
+
+Including the Favoritable module in a ApplicationController makes the contrller
+support the favoritable path for its objects. All that is needed is the route
+that needs to be configured (see routes.rb for examples).
+
+==== Mass Assignable
+
+This ActiveSupport::Concern Module adds functions to easily create new
+attr_accessor dynamically for a object (or in our case models). This plays well
+with the hash that is supplied by loading information via rest, which can be
+assigned to the object so that access with the "." operator is possible.
