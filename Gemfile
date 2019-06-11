@@ -8,7 +8,7 @@ ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', git: "https://github.com/sparklemotion/sqlite3-ruby"
+gem 'sqlite3', '~> 1.3.13'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -27,7 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
+#gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
+
+gem 'bcrypt'
 
 gem 'faker', '1.7.3'
 gem 'httparty'
@@ -68,7 +70,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'webdriver'
-  gem 'win32console'
+  gem 'win32console', platforms: %i[mingw mswin x64_mingw jruby]
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
