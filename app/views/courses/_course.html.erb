@@ -4,6 +4,11 @@
     <%= content_tag :h2, course.c_title if course.respond_to? :c_title %>
   </div>
 
+  <% fav = favorited_at(course) %>
+  <% if not fav.nil? %>
+    <p>Date_favorited: <%= fav %></p>
+  <% end %>
+
   <% if course.respond_to?(:c_link) && !course.c_link.nil? %>
     <p class="card-text">
       Link: <%= link_to "Tiss", course.c_link, :target => :_blank %>

@@ -4,6 +4,11 @@
     <%= content_tag :h2, thesis.t_title if thesis.respond_to? :t_title %>
   </div>
 
+  <% fav = favorited_at(thesis) %>
+  <% if not fav.nil? %>
+    <p>Date_favorited: <%= fav %></p>
+  <% end %>
+
   <% if thesis.respond_to?(:detail_url) && !thesis.detail_url.nil? %>
     <p class="card-text">
       Link: <%= link_to "Tiss Link", thesis.detail_url, :target => :_blank %>

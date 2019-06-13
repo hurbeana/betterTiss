@@ -8,6 +8,11 @@
 
   <p class="card-text">Gender: <%= person.gender %></p>
 
+  <% fav = favorited_at(person) %>
+  <% if not fav.nil? %>
+    <p>Date_favorited: <%= fav %></p>
+  <% end %>
+
   <!-- p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
     <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p -->
 

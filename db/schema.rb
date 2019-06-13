@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_120253) do
+ActiveRecord::Schema.define(version: 2019_06_13_115857) do
 
   create_table "courses", force: :cascade do |t|
     t.string "tiss_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "courses_users", id: false, force: :cascade do |t|
     t.integer "course_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at"
     t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id"
     t.index ["user_id", "course_id"], name: "index_courses_users_on_user_id_and_course_id"
   end
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "people_users", id: false, force: :cascade do |t|
     t.integer "person_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at"
     t.index ["person_id", "user_id"], name: "index_people_users_on_person_id_and_user_id"
     t.index ["user_id", "person_id"], name: "index_people_users_on_user_id_and_person_id"
   end
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "projects_users", id: false, force: :cascade do |t|
     t.integer "project_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at"
     t.index ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id"
     t.index ["user_id", "project_id"], name: "index_projects_users_on_user_id_and_project_id"
   end
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "theses_users", id: false, force: :cascade do |t|
     t.integer "thesis_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at"
     t.index ["thesis_id", "user_id"], name: "index_theses_users_on_thesis_id_and_user_id"
     t.index ["user_id", "thesis_id"], name: "index_theses_users_on_user_id_and_thesis_id"
   end
