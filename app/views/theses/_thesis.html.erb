@@ -1,13 +1,12 @@
-<div class="card cardThesesSize">
+<div class="card cardThesesSize sort_theses">
 
   <div class="card-header fade3">
-    <%= content_tag :h2, thesis.t_title if thesis.respond_to? :t_title %>
+    <%= content_tag :h2, thesis.t_title, class: "sort_title" if thesis.respond_to? :t_title %>
+    <% fav = favorited_at(thesis) %>
+    <% if not fav.nil? %>
+      <p class="sort_date"><%= fav %></p>
+    <% end %>
   </div>
-
-  <% fav = favorited_at(thesis) %>
-  <% if not fav.nil? %>
-    <p>Date_favorited: <%= fav %></p>
-  <% end %>
 
   <% if thesis.respond_to?(:detail_url) && !thesis.detail_url.nil? %>
     <p class="card-text">

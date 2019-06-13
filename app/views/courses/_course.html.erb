@@ -1,13 +1,12 @@
-<div class="card cardCoursesSize">
+<div class="card cardCoursesSize sort_courses">
 
   <div class="card-header fade2Big">
-    <%= content_tag :h2, course.c_title if course.respond_to? :c_title %>
+    <%= content_tag :h2, course.c_title, class: "sort_title" if course.respond_to? :c_title %>
+    <% fav = favorited_at(course) %>
+    <% if not fav.nil? %>
+      <p class="sort_date"><%= fav %></p>
+    <% end %>
   </div>
-
-  <% fav = favorited_at(course) %>
-  <% if not fav.nil? %>
-    <p>Date_favorited: <%= fav %></p>
-  <% end %>
 
   <% if course.respond_to?(:c_link) && !course.c_link.nil? %>
     <p class="card-text">

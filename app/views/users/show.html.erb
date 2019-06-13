@@ -16,7 +16,18 @@
       <% if @user.people.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render @user.people %>
+
+        <div class="sort_container">
+          <p>Sort by: </p>
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_people', 'title')">Title
+            <i class="sort_arrow arrow_up"></i></p>
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_people', 'date')">Date
+            <i class="sort_arrow arrow_up"></i></p>
+        </div>
+
+        <div id="sort_people">
+          <%= render @user.people %>
+        </div>
       <% end %>
     </div>
 
@@ -25,7 +36,17 @@
       <% if @user.courses.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render @user.courses %>
+
+        <div class="sort_container">
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_courses', 'title')">Title
+            <i class="sort_arrow arrow_up"></i></p>
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_courses', 'date')">Date
+            <i class="sort_arrow arrow_up"></i></p>
+        </div>
+
+        <div id="sort_courses">
+          <%= render @user.courses %>
+        </div>
       <% end %>
     </div>
 
@@ -34,7 +55,17 @@
       <% if @user.projects.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render @user.projects %>
+
+        <div class="sort_container">
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_projects', 'title')">Title
+            <i class="sort_arrow arrow_up"></i></p>
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_projects', 'date')">Date
+            <i class="sort_arrow arrow_up"></i></p>
+        </div>
+
+        <div id="sort_projects">
+          <%= render @user.projects %>
+        </div>
       <% end %>
     </div>
 
@@ -43,7 +74,17 @@
       <% if @user.theses.empty? %>
         <p>No favorites found.</p>
       <% else %>
-        <%= render @user.theses %>
+
+        <div class="sort_container">
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_theses', 'title')">Title
+            <i class="sort_arrow arrow_up"></i></p>
+          <p class="sort_attribute" onclick="onSortClick(this, 'sort_theses', 'date')">Date
+            <i class="sort_arrow arrow_up"></i></p>
+        </div>
+
+        <div id="sort_theses">
+          <%= render @user.theses %>
+        </div>
       <% end %>
     </div>
   </div>

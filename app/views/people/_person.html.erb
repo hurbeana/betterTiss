@@ -1,17 +1,16 @@
-<div class="card cardPeopleSize">
+<div class="card cardPeopleSize sort_people">
 
   <!-- %= image_tag tiss_link + person.p_image, size: 50, class: 'card-img-top' if person.respond_to?(:p_image) && !person.p_image.nil? % -->
 
   <div class="card-header">
-    <%= content_tag :h2, person.firstname + "  " + person.lastname %>
+    <%= content_tag :h2, person.firstname + "  " + person.lastname, class: "sort_title" %>
+    <% fav = favorited_at(person) %>
+    <% if not fav.nil? %>
+      <p class="sort_date"><%= fav %></p>
+    <% end %>
   </div>
 
   <p class="card-text">Gender: <%= person.gender %></p>
-
-  <% fav = favorited_at(person) %>
-  <% if not fav.nil? %>
-    <p>Date_favorited: <%= fav %></p>
-  <% end %>
 
   <!-- p class="card-text">Prefix Titel: <%= person.prefixTitle if person.respond_to? :prefixTitle %></p>
     <p class="card-text">Postfix Titel: <%= person.postfixTitle if person.respond_to? :postfixTitle %></p -->

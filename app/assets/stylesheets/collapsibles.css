@@ -1,5 +1,5 @@
 .collapsible {
-    background-color: #777;
+    background-color: #828282;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -9,10 +9,12 @@
     outline: none;
     font-size: 15px;
     border-radius: 5px;
+    transition: background-color 250ms ease;
 }
 
 .active, .collapsible:hover {
-    background-color: #555;
+    background-color: #505050;
+    transition: background-color 250ms ease;
 }
 
 .collapsible:after {
@@ -28,13 +30,59 @@
 }
 
 .content {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-
     margin: 5px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
+}
+#sort_people, #sort_courses, #sort_projects, #sort_theses {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+
+
+/* sort stuff */
+.sort_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+.sort_container p {
+}
+
+.sort_attribute {
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+    margin: 0 5px 0 5px;
+    transition: background-color 250ms ease;
+}
+.sort_attribute:hover {
+    transition: background-color 250ms ease;
+    background-color: white;
+}
+
+.sort_arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow_up {
+    /* -135 = up, 45 = down */
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+.arrow_down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.sort_date {
+    display: none;
 }
