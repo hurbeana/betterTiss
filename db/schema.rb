@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "courses_users", id: false, force: :cascade do |t|
     t.integer "course_id", null: false
     t.integer "user_id", null: false
+    t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id"
+    t.index ["user_id", "course_id"], name: "index_courses_users_on_user_id_and_course_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "people_users", id: false, force: :cascade do |t|
     t.integer "person_id", null: false
     t.integer "user_id", null: false
+    t.index ["person_id", "user_id"], name: "index_people_users_on_person_id_and_user_id"
+    t.index ["user_id", "person_id"], name: "index_people_users_on_user_id_and_person_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -46,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "projects_users", id: false, force: :cascade do |t|
     t.integer "project_id", null: false
     t.integer "user_id", null: false
+    t.index ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id"
+    t.index ["user_id", "project_id"], name: "index_projects_users_on_user_id_and_project_id"
   end
 
   create_table "theses", force: :cascade do |t|
@@ -58,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_06_08_120253) do
   create_table "theses_users", id: false, force: :cascade do |t|
     t.integer "thesis_id", null: false
     t.integer "user_id", null: false
+    t.index ["thesis_id", "user_id"], name: "index_theses_users_on_thesis_id_and_user_id"
+    t.index ["user_id", "thesis_id"], name: "index_theses_users_on_user_id_and_thesis_id"
   end
 
   create_table "users", force: :cascade do |t|

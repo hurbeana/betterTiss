@@ -1,14 +1,12 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.2'
+gem 'rails', '5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.13'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -16,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
+#gem 'mini_racer', platforms: :ruby
 gem 'duktape'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -26,18 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-#gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
-
-gem 'bcrypt'
-
-gem 'faker', '1.7.3'
-gem 'httparty'
-gem 'jquery-rails'
-gem 'will_paginate'
-
-gem 'rdoc'
-gem 'yard'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -48,12 +36,26 @@ gem 'yard'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# For generating fake data
+#gem 'faker', '1.7.3'
+# For HTTP Rest requests
+gem 'httparty'
+
+# For jquery on the site
+gem 'jquery-rails'
+
+# For pagination
+gem 'will_paginate'
+
+# For Documentation
+gem 'rdoc'
+gem 'yard'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem "spring"
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -63,15 +65,14 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara'
+  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  # gem 'chromedriver-helper', '~> 2.1.0'
+  gem 'chromedriver-helper'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'webdriver'
-  gem 'win32console', platforms: %i[mingw mswin x64_mingw jruby]
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

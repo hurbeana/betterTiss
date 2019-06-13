@@ -4,10 +4,3 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
-
-YARD::Rake::YardocTask.new do |t|
- #t.files   = []   # optional
- #t.options = ['--any', '--extra', '--opts'] # optional
- #t.options = ['--files ','-r']
- t.stats_options = ['--list-undoc']         # optional
-end
